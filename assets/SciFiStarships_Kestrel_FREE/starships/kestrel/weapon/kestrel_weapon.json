@@ -1,0 +1,205 @@
+{
+  "name": "Flak Pellets",
+  "cell": [
+    48,
+    48
+  ],
+  "views": {
+    "top": {
+      "sheet": "kestrel_weapon_top.png",
+      "elements": {
+        "shot": {
+          "row": 0,
+          "frames": 4,
+          "frame_ms": [
+            60,
+            60,
+            60,
+            60
+          ],
+          "loop": true,
+          "spawn": [
+            0,
+            -4
+          ],
+          "speed": 8
+        },
+        "charged": {
+          "row": 1,
+          "frames": 4,
+          "frame_ms": [
+            60,
+            60,
+            60,
+            60
+          ],
+          "loop": true,
+          "spawn": [
+            0,
+            -13
+          ],
+          "speed": 5
+        },
+        "charge": {
+          "row": 2,
+          "frames": 8,
+          "frame_ms": [
+            70,
+            70,
+            70,
+            70,
+            70,
+            70,
+            70,
+            70
+          ],
+          "loop": false
+        },
+        "muzzle": {
+          "row": 3,
+          "frames": 3,
+          "frame_ms": [
+            50,
+            50,
+            50
+          ],
+          "loop": false
+        },
+        "muzzle_big": {
+          "row": 4,
+          "frames": 3,
+          "frame_ms": [
+            50,
+            50,
+            50
+          ],
+          "loop": false
+        },
+        "impact": {
+          "row": 5,
+          "frames": 6,
+          "frame_ms": [
+            50,
+            50,
+            50,
+            50,
+            50,
+            50
+          ],
+          "loop": false
+        },
+        "impact_big": {
+          "row": 6,
+          "frames": 6,
+          "frame_ms": [
+            60,
+            60,
+            60,
+            60,
+            60,
+            60
+          ],
+          "loop": false
+        }
+      }
+    },
+    "side": {
+      "sheet": "kestrel_weapon_side.png",
+      "elements": {
+        "shot": {
+          "row": 0,
+          "frames": 4,
+          "frame_ms": [
+            60,
+            60,
+            60,
+            60
+          ],
+          "loop": true,
+          "spawn": [
+            4,
+            0
+          ],
+          "speed": 8
+        },
+        "charged": {
+          "row": 1,
+          "frames": 4,
+          "frame_ms": [
+            60,
+            60,
+            60,
+            60
+          ],
+          "loop": true,
+          "spawn": [
+            13,
+            0
+          ],
+          "speed": 5
+        },
+        "charge": {
+          "row": 2,
+          "frames": 8,
+          "frame_ms": [
+            70,
+            70,
+            70,
+            70,
+            70,
+            70,
+            70,
+            70
+          ],
+          "loop": false
+        },
+        "muzzle": {
+          "row": 3,
+          "frames": 3,
+          "frame_ms": [
+            50,
+            50,
+            50
+          ],
+          "loop": false
+        },
+        "muzzle_big": {
+          "row": 4,
+          "frames": 3,
+          "frame_ms": [
+            50,
+            50,
+            50
+          ],
+          "loop": false
+        },
+        "impact": {
+          "row": 5,
+          "frames": 6,
+          "frame_ms": [
+            50,
+            50,
+            50,
+            50,
+            50,
+            50
+          ],
+          "loop": false
+        },
+        "impact_big": {
+          "row": 6,
+          "frames": 6,
+          "frame_ms": [
+            60,
+            60,
+            60,
+            60,
+            60,
+            60
+          ],
+          "loop": false
+        }
+      }
+    }
+  }
+}

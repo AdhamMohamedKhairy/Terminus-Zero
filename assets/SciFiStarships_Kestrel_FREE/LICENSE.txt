@@ -1,0 +1,23 @@
+SCI-FI STARSHIPS — ASSET LICENSE
+Copyright (c) 2026 MEKAI GAMES
+
+By downloading or purchasing these assets you agree to the following.
+
+YOU CAN
+  - Use the assets in commercial and non-commercial games and interactive projects,
+    on any platform, with no royalties and no limit on the number of projects.
+  - Edit, recolor, crop, combine and adapt the assets for your project.
+  - Show the assets in trailers, screenshots, store pages and devlogs for your project.
+
+YOU CANNOT
+  - Resell, re-upload, share or redistribute the assets, original or modified,
+    on their own or as part of another asset pack, template, tileset or source bundle.
+  - Claim the assets as your own creation.
+  - Use the assets in NFTs or other blockchain tokens.
+  - Use the assets to train, fine-tune or evaluate machine-learning / AI models.
+
+CREDIT
+  Not required, but appreciated: "Sci-Fi Starships by MEKAI GAMES".
+
+This license applies to the paid packs and to the free ships of the series.
+The assets are provided "as is", without warranty of any kind.
