@@ -1,0 +1,231 @@
+[gd_scene format=3 uid="uid://ckut1fr5xucl6"]
+
+[ext_resource type="Texture2D" uid="uid://2j6ssud2mpkm" path="res://assets/AboEl5yr/bg_pause.png" id="1_f1d2v"]
+[ext_resource type="FontFile" uid="uid://cstm0pu8svo1l" path="res://assets/fonts/galacticgrid/GalacticGrid.ttf" id="2_r8yp4"]
+[ext_resource type="FontFile" uid="uid://c18t6187sybsp" path="res://assets/fonts/astron-boy/Astron Boy.otf" id="3_aicil"]
+[ext_resource type="Texture2D" uid="uid://b5sps3g0qjlf1" path="res://assets/AboEl5yr/back.png" id="4_jn4bt"]
+[ext_resource type="Texture2D" uid="uid://c2s1qcopyp1vl" path="res://assets/AboEl5yr/restart.png" id="5_r1fnm"]
+[ext_resource type="Texture2D" uid="uid://devj5tuukf6a6" path="res://assets/AboEl5yr/settings.png" id="6_wen6a"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s7wsd"]
+bg_color = Color(0, 0, 0.13725491, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s7rlf"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0.2901961, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m0klm"]
+bg_color = Color(0, 0, 0.2901961, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="Pause" type="Control" unique_id=2112243588]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1275302524]
+layer = 0
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=481678182]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.15686275)
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=369019760]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer2" unique_id=266441937]
+offset_left = 326.0
+offset_top = 74.0
+offset_right = 826.0
+offset_bottom = 574.0
+texture = ExtResource("1_f1d2v")
+
+[node name="CanvasLayer3" type="CanvasLayer" parent="." unique_id=291566588]
+layer = 2
+
+[node name="Label" type="Label" parent="CanvasLayer3" unique_id=481247454]
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 2
+auto_translate_mode = 0
+editor_description = ""
+visible = true
+modulate = Color(1, 1, 1, 1)
+self_modulate = Color(1, 1, 1, 1)
+show_behind_parent = false
+top_level = false
+clip_children = 0
+oversampling_with_scale = 0
+light_mask = 1
+visibility_layer = 1
+z_index = 0
+z_as_relative = true
+y_sort_enabled = false
+texture_filter = 0
+texture_repeat = 0
+material = null
+use_parent_material = false
+custom_minimum_size = Vector2(0, 0)
+custom_maximum_size = Vector2(-1, -1)
+propagate_maximum_size = false
+clip_contents = false
+layout_mode = 3
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 408.0
+offset_top = 131.0
+offset_right = 744.0
+offset_bottom = 199.0
+grow_horizontal = 1
+grow_vertical = 1
+rotation = 0.0
+scale = Vector2(1, 1)
+pivot_offset = Vector2(0, 0)
+pivot_offset_ratio = Vector2(0, 0)
+size_flags_horizontal = 1
+size_flags_vertical = 4
+size_flags_stretch_ratio = 1.0
+offset_transform_enabled = false
+offset_transform_position = Vector2(0, 0)
+offset_transform_position_ratio = Vector2(0, 0)
+offset_transform_scale = Vector2(1, 1)
+offset_transform_rotation = 0.0
+offset_transform_pivot = Vector2(0, 0)
+offset_transform_pivot_ratio = Vector2(0.5, 0.5)
+offset_transform_visual_only = true
+localize_numeral_system = true
+layout_direction = 0
+translation_context = &""
+tooltip_text = ""
+tooltip_auto_translate_mode = 0
+focus_neighbor_left = NodePath("")
+focus_neighbor_top = NodePath("")
+focus_neighbor_right = NodePath("")
+focus_neighbor_bottom = NodePath("")
+focus_next = NodePath("")
+focus_previous = NodePath("")
+focus_mode = 0
+focus_behavior_recursive = 0
+mouse_filter = 2
+mouse_behavior_recursive = 0
+mouse_force_pass_scroll_events = true
+mouse_default_cursor_shape = 0
+accessibility_name = ""
+accessibility_description = ""
+accessibility_live = 0
+accessibility_controls_nodes = Array[NodePath]([])
+accessibility_described_by_nodes = Array[NodePath]([])
+accessibility_labeled_by_nodes = Array[NodePath]([])
+accessibility_flow_to_nodes = Array[NodePath]([])
+theme = null
+theme_type_variation = &""
+theme_override_fonts/font = ExtResource("2_r8yp4")
+theme_override_font_sizes/font_size = 72
+text = "Pause"
+label_settings = null
+horizontal_alignment = 1
+vertical_alignment = 0
+autowrap_mode = 0
+autowrap_trim_flags = 192
+justification_flags = 163
+paragraph_separator = "\\n"
+clip_text = false
+text_overrun_behavior = 0
+ellipsis_char = "…"
+uppercase = false
+tab_stops = PackedFloat32Array()
+lines_skipped = 0
+max_lines_visible = -1
+visible_characters = -1
+visible_characters_behavior = 0
+visible_ratio = 1.0
+text_direction = 0
+language = ""
+structured_text_bidi_override = 0
+structured_text_bidi_override_options = Array[NodePath]([])
+script = null
+
+[node name="Button" type="Button" parent="CanvasLayer3" unique_id=681055410]
+offset_left = 463.0
+offset_top = 227.0
+offset_right = 683.0
+offset_bottom = 308.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0.13725491, 1)
+theme_override_fonts/font = ExtResource("3_aicil")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_s7wsd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_s7rlf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_m0klm")
+text = "Back"
+icon = ExtResource("4_jn4bt")
+expand_icon = true
+
+[node name="Button2" type="Button" parent="CanvasLayer3" unique_id=641463050]
+offset_left = 463.0
+offset_top = 417.0
+offset_right = 683.0
+offset_bottom = 498.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0.13725491, 1)
+theme_override_fonts/font = ExtResource("3_aicil")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_s7wsd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_s7rlf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_m0klm")
+text = "Main Menu"
+icon = ExtResource("5_r1fnm")
+expand_icon = true
+
+[node name="Button3" type="Button" parent="CanvasLayer3" unique_id=1318361664]
+offset_left = 463.0
+offset_top = 320.0
+offset_right = 683.0
+offset_bottom = 401.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0.13725491, 1)
+theme_override_fonts/font = ExtResource("3_aicil")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_s7wsd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_s7rlf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_m0klm")
+text = "Settings"
+icon = ExtResource("6_wen6a")
+expand_icon = true
