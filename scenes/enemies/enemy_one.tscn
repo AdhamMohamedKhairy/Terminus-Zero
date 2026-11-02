@@ -1,0 +1,136 @@
+[gd_scene format=3 uid="uid://cvwekgqbiskty"]
+
+[ext_resource type="Texture2D" uid="uid://cdfplhfn8ffop" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/hit/00.png" id="1_23lxu"]
+[ext_resource type="Texture2D" uid="uid://bdom2wfobcjg2" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/hit/01.png" id="2_q35jy"]
+[ext_resource type="Texture2D" uid="uid://c2mb6oqo8q74j" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/hit/02.png" id="3_apfa1"]
+[ext_resource type="Texture2D" uid="uid://ccokjh3svqgsu" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/hit/03.png" id="4_fu8rm"]
+[ext_resource type="Texture2D" uid="uid://ci14dclapxev0" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/idle/00.png" id="5_so8hl"]
+[ext_resource type="Texture2D" uid="uid://b4wlau6xvph47" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/idle/01.png" id="6_qpo0e"]
+[ext_resource type="Texture2D" uid="uid://cbm06plf86bfj" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/idle/02.png" id="7_3peoh"]
+[ext_resource type="Texture2D" uid="uid://lpfst2xrwqyg" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/idle/03.png" id="8_rjy6s"]
+[ext_resource type="Texture2D" uid="uid://bftb2rnq4x6yi" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/left_2/00.png" id="9_ypvnm"]
+[ext_resource type="Texture2D" uid="uid://bc2jxfm4o4np" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/left_2/01.png" id="10_eb13b"]
+[ext_resource type="Texture2D" uid="uid://wyvrebcmjd5i" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/left_2/02.png" id="11_hmmac"]
+[ext_resource type="Texture2D" uid="uid://bsvqse3mpnjc0" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/left_2/03.png" id="12_4kb3l"]
+[ext_resource type="Texture2D" uid="uid://dmrbxwt6decgq" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/right_2/00.png" id="13_xvbo4"]
+[ext_resource type="Texture2D" uid="uid://b2ww7aaxd0t57" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/right_2/01.png" id="14_ygc0o"]
+[ext_resource type="Texture2D" uid="uid://duhmrs468581x" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/right_2/02.png" id="15_7asjd"]
+[ext_resource type="Texture2D" uid="uid://lhwb50otlox7" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/right_2/03.png" id="16_ddl8e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sq27n"]
+atlas = ExtResource("5_so8hl")
+region = Rect2(0, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s480t"]
+atlas = ExtResource("6_qpo0e")
+region = Rect2(0, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3snww"]
+atlas = ExtResource("7_3peoh")
+region = Rect2(0, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8albm"]
+atlas = ExtResource("8_rjy6s")
+region = Rect2(0, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uq4kc"]
+atlas = ExtResource("9_ypvnm")
+region = Rect2(0, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yoijt"]
+atlas = ExtResource("10_eb13b")
+region = Rect2(0, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iv7be"]
+atlas = ExtResource("11_hmmac")
+region = Rect2(0, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wxr1l"]
+atlas = ExtResource("12_4kb3l")
+region = Rect2(0, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0px5"]
+atlas = ExtResource("13_xvbo4")
+region = Rect2(0, 0, 64, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_onkbk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_23lxu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_q35jy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_apfa1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_fu8rm")
+}],
+"loop": 1,
+"name": &"hit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sq27n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s480t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3snww")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8albm")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uq4kc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yoijt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iv7be")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wxr1l")
+}],
+"loop": 1,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m0px5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_ygc0o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_7asjd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_ddl8e")
+}],
+"loop": 1,
+"name": &"right",
+"speed": 5.0
+}]
+
+[node name="EnemyOne" type="CharacterBody2D" unique_id=1685160798]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1543579178]
+sprite_frames = SubResource("SpriteFrames_onkbk")
+animation = &"idle"
+frame = 1
+frame_progress = 0.2930184
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1690306089]
+polygon = PackedVector2Array(-24, 10, -24, 5, -23, 5, -23, 1, -22, 1, -22, -1, -21, -1, -21, -3, -19, -3, -19, -4, -18, -4, -18, -5, -17, -5, -17, -6, -16, -6, -16, -7, -15, -7, -14, -7, -14, -13, -13, -13, -13, -15, -12, -15, -12, -18, -10, -18, -10, -15, -9, -15, -9, -12, -8, -12, -8, -8, -7, -8, -7, -9, -6, -9, -6, -18, -5, -18, -5, -21, -4, -21, -4, -23, -3, -23, -3, -26, -2, -26, -2, -30, -1, -30, -1, -32, 1, -32, 1, -30, 2, -30, 2, -28, 3, -28, 3, -23, 4, -23, 4, -20, 5, -20, 5, -18, 6, -18, 6, -9, 8, -9, 8, -12, 9, -12, 9, -15, 10, -15, 10, -18, 12, -18, 12, -16, 13, -16, 13, -12, 14, -12, 14, -9, 15, -9, 15, -6, 17, -6, 17, -5, 18, -5, 18, -4, 19, -4, 19, -3, 20, -3, 20, -2, 21, -2, 21, -1, 22, -1, 22, 5, 23, 5, 23, 10, 22, 10, 22, 7, 21, 7, 21, 6, 20, 6, 20, 5, 19, 5, 19, 4, 17, 4, 17, 3, 16, 3, 16, 2, 15, 2, 14, 2, 14, 3, 13, 3, 13, 6, 9, 6, 9, 0, 9, -1, 8, -1, 7, -1, 7, 1, 6, 1, 6, 4, 5, 4, 5, 6, 4, 6, 4, 9, 3, 9, 3, 15, 2, 15, 2, 18, 1, 18, 1, 20, 0, 20, 0, 19, -1, 19, -1, 18, -2, 18, -2, 17, -3, 17, -3, 14, -4, 14, -4, 13, -4, 10, -4, 5, -5, 5, -5, 3, -6, 3, -6, 1, -7, 1, -7, -1, -8, -1, -8, 4, -9, 4, -9, 6, -13, 6, -13, 3, -18, 3, -18, 4, -19, 4, -19, 5, -20, 5, -20, 6, -21, 6, -21, 7, -22, 7, -22, 9, -23, 9, -23, 10)
