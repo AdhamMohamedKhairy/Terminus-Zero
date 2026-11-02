@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://chdg1725nbojh" path="res://assets/cockpit.png" id="1_qp6js"]
 [ext_resource type="FontFile" uid="uid://4xnm0klhxm3f" path="res://assets/fonts/title.ttf" id="2_nchv8"]
 [ext_resource type="FontFile" uid="uid://dpw0a4uab2rbv" path="res://assets/fonts/main.ttf" id="3_qji5x"]
+[ext_resource type="Script" uid="uid://dwupyiogkh4du" path="res://scenes/Main Menu/keybinds.gd" id="4_nchv8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_nfrx5"]
 font = ExtResource("2_nchv8")
@@ -153,6 +154,14 @@ corner_radius_top_left = 64
 corner_radius_bottom_left = 64
 corner_detail = 1
 
+[sub_resource type="GDScript" id="GDScript_0hvcy"]
+resource_name = "back script"
+script/source = "extends Button
+
+func _on_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://scenes/Main Menu/main_menu.tscn\")
+"
+
 [node name="Settings" type="Control" unique_id=709196258]
 layout_mode = 3
 anchors_preset = 15
@@ -251,6 +260,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_0hvcy")
 theme_override_styles/hover = SubResource("StyleBoxFlat_tr8j5")
 theme_override_styles/focus = SubResource("StyleBoxFlat_8t61q")
 text = "ON"
+script = ExtResource("4_nchv8")
 
 [node name="down" type="HBoxContainer" parent="ScrollContainer/container/left" unique_id=487327053]
 layout_mode = 2
@@ -276,6 +286,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_0hvcy")
 theme_override_styles/hover = SubResource("StyleBoxFlat_tr8j5")
 theme_override_styles/focus = SubResource("StyleBoxFlat_8t61q")
 text = "ON"
+script = ExtResource("4_nchv8")
 
 [node name="boost" type="HBoxContainer" parent="ScrollContainer/container/left" unique_id=201344490]
 layout_mode = 2
@@ -300,6 +311,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_nfrx5")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_0hvcy")
 theme_override_styles/hover = SubResource("StyleBoxFlat_tr8j5")
 theme_override_styles/focus = SubResource("StyleBoxFlat_8t61q")
+script = ExtResource("4_nchv8")
 
 [node name="right" type="VBoxContainer" parent="ScrollContainer/container" unique_id=1390016859]
 layout_mode = 2
@@ -356,6 +368,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_0hvcy")
 theme_override_styles/hover = SubResource("StyleBoxFlat_tr8j5")
 theme_override_styles/focus = SubResource("StyleBoxFlat_8t61q")
 text = "ON"
+script = ExtResource("4_nchv8")
 
 [node name="right" type="HBoxContainer" parent="ScrollContainer/container/right" unique_id=840962043]
 layout_mode = 2
@@ -381,6 +394,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_0hvcy")
 theme_override_styles/hover = SubResource("StyleBoxFlat_tr8j5")
 theme_override_styles/focus = SubResource("StyleBoxFlat_8t61q")
 text = "ON"
+script = ExtResource("4_nchv8")
 
 [node name="interact" type="HBoxContainer" parent="ScrollContainer/container/right" unique_id=375488193]
 layout_mode = 2
@@ -406,6 +420,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_0hvcy")
 theme_override_styles/hover = SubResource("StyleBoxFlat_tr8j5")
 theme_override_styles/focus = SubResource("StyleBoxFlat_8t61q")
 text = "ON"
+script = ExtResource("4_nchv8")
 
 [node name="back" type="Button" parent="." unique_id=468663146]
 layout_mode = 1
@@ -429,6 +444,8 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_4hts0")
 theme_override_styles/hover = SubResource("StyleBoxFlat_rnn0u")
 theme_override_styles/focus = SubResource("StyleBoxFlat_ecr66")
 text = "/  LEAVE"
+script = SubResource("GDScript_0hvcy")
 
 [connection signal="pressed" from="ScrollContainer/container/left/audio/audio" to="ScrollContainer/container/left/audio/audio" method="_on_pressed"]
 [connection signal="pressed" from="ScrollContainer/container/right/fullscreen/fullscreen" to="ScrollContainer/container/right/fullscreen/fullscreen" method="_on_pressed"]
+[connection signal="pressed" from="back" to="back" method="_on_pressed"]
