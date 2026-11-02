@@ -1,5 +1,167 @@
 [gd_scene format=3 uid="uid://xnkk21uhuqqi"]
 
+[ext_resource type="Texture2D" uid="uid://chdg1725nbojh" path="res://assets/cockpit.png" id="1_qp6js"]
+[ext_resource type="FontFile" uid="uid://4xnm0klhxm3f" path="res://assets/fonts/title.ttf" id="2_nchv8"]
+[ext_resource type="FontFile" uid="uid://dpw0a4uab2rbv" path="res://assets/fonts/main.ttf" id="3_qji5x"]
+[ext_resource type="Script" uid="uid://dwupyiogkh4du" path="res://scenes/Main Menu/keybinds.gd" id="4_nchv8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nfrx5"]
+font = ExtResource("2_nchv8")
+font_size = 72
+
+[sub_resource type="LabelSettings" id="LabelSettings_0hvcy"]
+font = ExtResource("3_qji5x")
+font_size = 64
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nfrx5"]
+bg_color = Color(0.6, 0.6, 0.6, 0.29803923)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 64
+corner_radius_top_right = 64
+corner_radius_bottom_right = 64
+corner_radius_bottom_left = 64
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0hvcy"]
+bg_color = Color(0.6, 0.6, 0.6, 0.5019608)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 64
+corner_radius_top_right = 64
+corner_radius_bottom_right = 64
+corner_radius_bottom_left = 64
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tr8j5"]
+bg_color = Color(0.6, 0.6, 0.6, 0.3882353)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 64
+corner_radius_top_right = 64
+corner_radius_bottom_right = 64
+corner_radius_bottom_left = 64
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8t61q"]
+bg_color = Color(0.6, 0.6, 0.6, 0.3882353)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 64
+corner_radius_top_right = 64
+corner_radius_bottom_right = 64
+corner_radius_bottom_left = 64
+corner_detail = 1
+
+[sub_resource type="GDScript" id="GDScript_nfrx5"]
+resource_name = "audio"
+script/source = "extends Button
+
+var muted:=false
+
+func _ready():
+	var bus_idx = AudioServer.get_bus_index(\"Master\")
+	text = \"OFF\" if AudioServer.is_bus_mute(bus_idx) else \"ON\"
+
+func _on_pressed() -> void:
+	var bus_idx = AudioServer.get_bus_index(\"Master\")
+	AudioServer.set_bus_mute(bus_idx, not muted)
+	muted = not muted
+	text = \"ON\" if not muted else \"OFF\"
+"
+
+[sub_resource type="GDScript" id="GDScript_qp6js"]
+resource_name = "batatis"
+script/source = "extends Button
+
+func _ready():
+	text = \"ON\" if DisplayServer.window_get_mode() \\
+	== DisplayServer.WINDOW_MODE_FULLSCREEN \\
+	else \"OFF\"
+
+func _on_pressed() -> void:
+	var mode := DisplayServer.window_get_mode()
+	
+	if mode == DisplayServer.WINDOW_MODE_WINDOWED:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+		text = \"ON\"
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+		text = \"OFF\"
+"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l2nlq"]
+bg_color = Color(0.7647059, 0.58431375, 0.105882354, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.78039217, 0.2509804, 0.15686275, 1)
+border_blend = true
+corner_radius_top_left = 64
+corner_radius_bottom_left = 64
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4hts0"]
+bg_color = Color(0.9768854, 0.77439183, 0.29489598, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.78039217, 0.2509804, 0.15686275, 1)
+border_blend = true
+corner_radius_top_left = 64
+corner_radius_bottom_left = 64
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rnn0u"]
+bg_color = Color(0.8855022, 0.6808991, 0.1494658, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.78039217, 0.2509804, 0.15686275, 1)
+border_blend = true
+corner_radius_top_left = 64
+corner_radius_bottom_left = 64
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ecr66"]
+bg_color = Color(0.8862745, 0.68235296, 0.14901961, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.78039217, 0.2509804, 0.15686275, 1)
+border_blend = true
+corner_radius_top_left = 64
+corner_radius_bottom_left = 64
+corner_detail = 1
+
+[sub_resource type="GDScript" id="GDScript_0hvcy"]
+resource_name = "back script"
+script/source = "extends Button
+
+func _on_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://scenes/Main Menu/main_menu.tscn\")
+"
+
 [node name="Settings" type="Control" unique_id=709196258]
 layout_mode = 3
 anchors_preset = 15
@@ -7,3 +169,283 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="canvas" type="CanvasLayer" parent="." unique_id=23492331]
+layer = -1
+
+[node name="bg" type="TextureRect" parent="canvas" unique_id=1493767580]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_qp6js")
+
+[node name="Label" type="Label" parent="canvas" unique_id=1646348733]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -198.5
+offset_top = 82.0
+offset_right = 198.5
+offset_bottom = 151.0
+grow_horizontal = 2
+text = "SETTINGS"
+label_settings = SubResource("LabelSettings_nfrx5")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1528074352]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 169.0
+offset_right = 1040.0
+offset_bottom = 469.0
+size_flags_horizontal = 3
+follow_focus = true
+
+[node name="container" type="HSplitContainer" parent="ScrollContainer" unique_id=105097063]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 48
+dragging_enabled = false
+
+[node name="left" type="VBoxContainer" parent="ScrollContainer/container" unique_id=1126553090]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 32
+
+[node name="audio" type="HBoxContainer" parent="ScrollContainer/container/left" unique_id=672157048]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="Label" type="Label" parent="ScrollContainer/container/left/audio" unique_id=492190332]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "COMMS"
+label_settings = SubResource("LabelSettings_0hvcy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="audio" type="Button" parent="ScrollContainer/container/left/audio" unique_id=1642841349]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_font_sizes/font_size = 56
+theme_override_styles/normal = SubResource("StyleBoxFlat_nfrx5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0hvcy")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tr8j5")
+theme_override_styles/focus = SubResource("StyleBoxFlat_8t61q")
+text = "ON"
+script = SubResource("GDScript_nfrx5")
+
+[node name="up" type="HBoxContainer" parent="ScrollContainer/container/left" unique_id=888572516]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="Label" type="Label" parent="ScrollContainer/container/left/up" unique_id=113986598]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "UP"
+label_settings = SubResource("LabelSettings_0hvcy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="up" type="Button" parent="ScrollContainer/container/left/up" unique_id=57890577]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_font_sizes/font_size = 56
+theme_override_styles/normal = SubResource("StyleBoxFlat_nfrx5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0hvcy")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tr8j5")
+theme_override_styles/focus = SubResource("StyleBoxFlat_8t61q")
+text = "ON"
+script = ExtResource("4_nchv8")
+
+[node name="down" type="HBoxContainer" parent="ScrollContainer/container/left" unique_id=487327053]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="Label" type="Label" parent="ScrollContainer/container/left/down" unique_id=1819970159]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "DOWN"
+label_settings = SubResource("LabelSettings_0hvcy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="down" type="Button" parent="ScrollContainer/container/left/down" unique_id=491613435]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_font_sizes/font_size = 56
+theme_override_styles/normal = SubResource("StyleBoxFlat_nfrx5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0hvcy")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tr8j5")
+theme_override_styles/focus = SubResource("StyleBoxFlat_8t61q")
+text = "ON"
+script = ExtResource("4_nchv8")
+
+[node name="boost" type="HBoxContainer" parent="ScrollContainer/container/left" unique_id=201344490]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="Label" type="Label" parent="ScrollContainer/container/left/boost" unique_id=892583942]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "BOOST"
+label_settings = SubResource("LabelSettings_0hvcy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="boost" type="Button" parent="ScrollContainer/container/left/boost" unique_id=881976422]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_font_sizes/font_size = 56
+theme_override_styles/normal = SubResource("StyleBoxFlat_nfrx5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0hvcy")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tr8j5")
+theme_override_styles/focus = SubResource("StyleBoxFlat_8t61q")
+script = ExtResource("4_nchv8")
+
+[node name="right" type="VBoxContainer" parent="ScrollContainer/container" unique_id=1390016859]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 32
+
+[node name="fullscreen" type="HBoxContainer" parent="ScrollContainer/container/right" unique_id=1747993208]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="Label" type="Label" parent="ScrollContainer/container/right/fullscreen" unique_id=1850490723]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Big Screen"
+label_settings = SubResource("LabelSettings_0hvcy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="fullscreen" type="Button" parent="ScrollContainer/container/right/fullscreen" unique_id=1120903456]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_font_sizes/font_size = 56
+theme_override_styles/normal = SubResource("StyleBoxFlat_nfrx5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0hvcy")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tr8j5")
+theme_override_styles/focus = SubResource("StyleBoxFlat_8t61q")
+text = "OFF"
+script = SubResource("GDScript_qp6js")
+
+[node name="left" type="HBoxContainer" parent="ScrollContainer/container/right" unique_id=1379127087]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="Label" type="Label" parent="ScrollContainer/container/right/left" unique_id=778644017]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "LEFT"
+label_settings = SubResource("LabelSettings_0hvcy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="left" type="Button" parent="ScrollContainer/container/right/left" unique_id=897899625]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_font_sizes/font_size = 56
+theme_override_styles/normal = SubResource("StyleBoxFlat_nfrx5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0hvcy")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tr8j5")
+theme_override_styles/focus = SubResource("StyleBoxFlat_8t61q")
+text = "ON"
+script = ExtResource("4_nchv8")
+
+[node name="right" type="HBoxContainer" parent="ScrollContainer/container/right" unique_id=840962043]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="Label" type="Label" parent="ScrollContainer/container/right/right" unique_id=1923678144]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "RIGHT"
+label_settings = SubResource("LabelSettings_0hvcy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="right" type="Button" parent="ScrollContainer/container/right/right" unique_id=1041768090]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_font_sizes/font_size = 56
+theme_override_styles/normal = SubResource("StyleBoxFlat_nfrx5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0hvcy")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tr8j5")
+theme_override_styles/focus = SubResource("StyleBoxFlat_8t61q")
+text = "ON"
+script = ExtResource("4_nchv8")
+
+[node name="interact" type="HBoxContainer" parent="ScrollContainer/container/right" unique_id=375488193]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="Label" type="Label" parent="ScrollContainer/container/right/interact" unique_id=708221946]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Interact"
+label_settings = SubResource("LabelSettings_0hvcy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="interact" type="Button" parent="ScrollContainer/container/right/interact" unique_id=991836653]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_font_sizes/font_size = 56
+theme_override_styles/normal = SubResource("StyleBoxFlat_nfrx5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0hvcy")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tr8j5")
+theme_override_styles/focus = SubResource("StyleBoxFlat_8t61q")
+text = "ON"
+script = ExtResource("4_nchv8")
+
+[node name="back" type="Button" parent="." unique_id=468663146]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -128.0
+offset_top = -85.0
+offset_right = 128.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 32
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_l2nlq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4hts0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rnn0u")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ecr66")
+text = "/  LEAVE"
+script = SubResource("GDScript_0hvcy")
+
+[connection signal="pressed" from="ScrollContainer/container/left/audio/audio" to="ScrollContainer/container/left/audio/audio" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/container/right/fullscreen/fullscreen" to="ScrollContainer/container/right/fullscreen/fullscreen" method="_on_pressed"]
+[connection signal="pressed" from="back" to="back" method="_on_pressed"]
