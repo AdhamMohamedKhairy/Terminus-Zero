@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://c28knsl4ccybl"]
+
+[ext_resource type="Script" uid="uid://dnfjlaoe42jng" path="res://scenes/ui/meteor.gd" id="4_hs6xb"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qitq1"]
+load_path = "res://.godot/imported/asteroid-1.png-1a72a5d8e3cf431708fe7463e9e7650e.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pvsxj"]
+load_path = "res://.godot/imported/asteroid-2.png-efffcab619c850bf45b313bdb5585161.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_t3jey"]
+load_path = "res://.godot/imported/asteroid-3.png-31d6424513382f2230b73a6943eabd02.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hs6xb"]
+load_path = "res://.godot/imported/asteroid-4.png-c4d43051ab1dd9cf62ef4c93250beb18.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fk2r5"]
+load_path = "res://.godot/imported/asteroid-5.png-bf0aa1794222a2d9a0d5f78ba880167a.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_f3j1j"]
+load_path = "res://.godot/imported/asteroid-6.png-759e3472193e910c59aa92666b43305a.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_egvgl"]
+load_path = "res://.godot/imported/asteroid-7.png-0cbe2d6a82bb74d323a611380f2447d3.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pt5yx"]
+load_path = "res://.godot/imported/asteroid-8.png-ee7d7a321cb2565d23290e225262596c.ctex"
+
+[node name="Meteor" type="Sprite2D" unique_id=721782590]
+scale = Vector2(2, 2)
+script = ExtResource("4_hs6xb")
+textures = Array[Texture]([SubResource("CompressedTexture2D_qitq1"), SubResource("CompressedTexture2D_pvsxj"), SubResource("CompressedTexture2D_t3jey"), SubResource("CompressedTexture2D_hs6xb"), SubResource("CompressedTexture2D_fk2r5"), SubResource("CompressedTexture2D_f3j1j"), SubResource("CompressedTexture2D_egvgl"), SubResource("CompressedTexture2D_pt5yx")])
