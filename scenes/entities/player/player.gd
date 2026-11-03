@@ -33,20 +33,19 @@ const BOOST_MAX_SPEED := 800.0
 var trail_left_times:Array[float]=[]
 
 var dead := false
-
+var warping := true
 func _ready():
 	# Spawn, then idle
 	sprite.play("warp")
 	await sprite.animation_finished
 	sprite.play("idle")
-	
 	await get_tree().create_timer(1).timeout
-	Bubble.toggle_buble(self,Vector2(-20,-20))
+	Bubble.toggle_buble(self)
 	Bubble.queue_text(["Hiiiii","Im Hamza"])
-
+	warping = false
 func _physics_process(delta: float) -> void:
 	# No motion if dead
-	if dead:
+	if dead or warping:
 		return
 	
 	# Rotate with left and right, move with up, brake with down

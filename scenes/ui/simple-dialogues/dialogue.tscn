@@ -8,10 +8,10 @@ content_margin_top = 8.0
 content_margin_right = 8.0
 content_margin_bottom = 8.0
 bg_color = Color(0.039215688, 0.09019608, 0.14117648, 1)
-border_width_left = 8
-border_width_top = 8
-border_width_right = 8
-border_width_bottom = 8
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
 
 [sub_resource type="LabelSettings" id="LabelSettings_0hvcy"]
 font_size = 32

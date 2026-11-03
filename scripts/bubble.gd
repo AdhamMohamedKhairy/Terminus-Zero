@@ -8,7 +8,7 @@ var busy := false
 var offset:Vector2=Vector2(-40,-40)
 var target:Node2D
 var bubble:PanelContainer
-func toggle_buble(object: Node2D, bubble_offset: Vector2 = Vector2.ZERO):
+func toggle_buble(object: Node2D, bubble_offset: Vector2 = Vector2(-40,-40)):
 	target = object
 	offset = bubble_offset
 
