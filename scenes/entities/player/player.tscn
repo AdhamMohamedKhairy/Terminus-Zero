@@ -1,0 +1,202 @@
+[gd_scene format=3 uid="uid://b5qmlnw8qgv7x"]
+
+[ext_resource type="Script" uid="uid://1t4s387wc8pi" path="res://scenes/entities/player/player.gd" id="1_1lgw8"]
+[ext_resource type="Texture2D" uid="uid://d0sf6ltknn2ho" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/boost/00.png" id="2_wg44p"]
+[ext_resource type="Texture2D" uid="uid://coi457cvi4jac" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/boost/01.png" id="3_2frc1"]
+[ext_resource type="Texture2D" uid="uid://44lo1qudfna8" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/boost/02.png" id="4_tswhv"]
+[ext_resource type="Texture2D" uid="uid://ck2lsrl8mvahm" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/boost/03.png" id="5_3m0ly"]
+[ext_resource type="Texture2D" uid="uid://ndl30nptmaii" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/destroy/00.png" id="6_y7ulx"]
+[ext_resource type="Texture2D" uid="uid://c1s0dr7k30kki" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/destroy/01.png" id="7_dh4vq"]
+[ext_resource type="Texture2D" uid="uid://do05y6g5ptj3k" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/destroy/02.png" id="8_d23qq"]
+[ext_resource type="Texture2D" uid="uid://cunj4ypxbbi2k" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/destroy/03.png" id="9_7tix7"]
+[ext_resource type="Texture2D" uid="uid://l86lsxbx5luo" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/destroy/04.png" id="10_o8jto"]
+[ext_resource type="Texture2D" uid="uid://dtlmo2hwrgcx5" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/destroy/05.png" id="11_rt777"]
+[ext_resource type="Texture2D" uid="uid://hfcnptqkngcd" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/destroy/06.png" id="12_ei5f5"]
+[ext_resource type="Texture2D" uid="uid://b4na35pjg18wd" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/destroy/07.png" id="13_5y5t1"]
+[ext_resource type="Texture2D" uid="uid://bfk22p7imicih" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/destroy/08.png" id="14_4rrkf"]
+[ext_resource type="Texture2D" uid="uid://cumkb7dsmfnyd" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/destroy/09.png" id="15_g3uyw"]
+[ext_resource type="Texture2D" uid="uid://ci14dclapxev0" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/idle/00.png" id="16_2l7jx"]
+[ext_resource type="Texture2D" uid="uid://b4wlau6xvph47" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/idle/01.png" id="17_dj766"]
+[ext_resource type="Texture2D" uid="uid://cbm06plf86bfj" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/idle/02.png" id="18_80gid"]
+[ext_resource type="Texture2D" uid="uid://lpfst2xrwqyg" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/idle/03.png" id="19_jdidn"]
+[ext_resource type="Texture2D" uid="uid://7gyokahhra5t" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/left_1/00.png" id="20_c2ktb"]
+[ext_resource type="Texture2D" uid="uid://44on70tnhixe" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/left_1/01.png" id="21_5tbmh"]
+[ext_resource type="Texture2D" uid="uid://bbjolwnib6e64" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/left_1/02.png" id="22_bumth"]
+[ext_resource type="Texture2D" uid="uid://dg845qqgq4r8l" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/left_1/03.png" id="23_avkvk"]
+[ext_resource type="Texture2D" uid="uid://dmrbxwt6decgq" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/right_2/00.png" id="24_daptw"]
+[ext_resource type="Texture2D" uid="uid://b2ww7aaxd0t57" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/right_2/01.png" id="25_qpxpq"]
+[ext_resource type="Texture2D" uid="uid://duhmrs468581x" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/right_2/02.png" id="26_ofi1a"]
+[ext_resource type="Texture2D" uid="uid://lhwb50otlox7" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/right_2/03.png" id="27_7n3y3"]
+[ext_resource type="Texture2D" uid="uid://djijtoxhbove1" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/warp/00.png" id="28_0l7wy"]
+[ext_resource type="Texture2D" uid="uid://dphfaaieopht8" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/warp/01.png" id="29_bxmn4"]
+[ext_resource type="Texture2D" uid="uid://d15yc57isd4q3" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/warp/02.png" id="30_f3lfh"]
+[ext_resource type="Texture2D" uid="uid://7jyfhr27bb52" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/warp/03.png" id="31_pomkq"]
+[ext_resource type="Texture2D" uid="uid://dvqqibxhnkodj" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/warp/04.png" id="32_hsn3e"]
+[ext_resource type="Texture2D" uid="uid://bxnggdytqe2bi" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/warp/05.png" id="33_txex0"]
+[ext_resource type="Texture2D" uid="uid://cs8a3r6qnov4n" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/warp/06.png" id="34_thyny"]
+[ext_resource type="Texture2D" uid="uid://n3dvvbh8g86s" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/warp/07.png" id="35_2i17y"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0qees"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_wg44p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_2frc1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_tswhv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_3m0ly")
+}],
+"loop": 1,
+"name": &"boost",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_y7ulx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_dh4vq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_d23qq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_7tix7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_o8jto")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_rt777")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ei5f5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_5y5t1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_4rrkf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_g3uyw")
+}],
+"loop": 0,
+"name": &"die",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_2l7jx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_dj766")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_80gid")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_jdidn")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_c2ktb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_5tbmh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_bumth")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_avkvk")
+}],
+"loop": 1,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("24_daptw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_qpxpq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_ofi1a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_7n3y3")
+}],
+"loop": 1,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("28_0l7wy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_bxmn4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_f3lfh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_pomkq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_hsn3e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_txex0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_thyny")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_2i17y")
+}],
+"loop": 0,
+"name": &"warp",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ucweq"]
+radius = 29.017237
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nfrx5"]
+radius = 41.01219
+
+[node name="Player" type="CharacterBody2D" unique_id=1909375880]
+script = ExtResource("1_1lgw8")
+
+[node name="sprite" type="AnimatedSprite2D" parent="." unique_id=1549663275]
+sprite_frames = SubResource("SpriteFrames_0qees")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="collision" type="CollisionShape2D" parent="." unique_id=1015923296]
+shape = SubResource("CircleShape2D_ucweq")
+
+[node name="area" type="Area2D" parent="." unique_id=833239874]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="area" unique_id=1206745581]
+shape = SubResource("CircleShape2D_nfrx5")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=472364406]
+
+[node name="line" type="Line2D" parent="." unique_id=756809026]
+position = Vector2(1, 11)
+points = PackedVector2Array(-1, -1, -1, 23)
+width = 6.0
+default_color = Color(0.31764707, 0.7176471, 0.7882353, 1)
