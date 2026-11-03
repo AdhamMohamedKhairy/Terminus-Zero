@@ -11,16 +11,20 @@ config_version=5
 [application]
 
 config/name="Terminus Zero"
+run/main_scene="uid://464cc18kpaho"
 config/features=PackedStringArray("4.7", "Forward Plus")
+config/icon="uid://cb2uf0f28opt0"
 
 [display]
 
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/size/resizable=false
 window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
+enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg", "res://addons/markdownlabel/plugin.cfg")
 
 [file_customization]
 
@@ -30,6 +34,10 @@ folder_colors={
 "res://scenes/": "blue",
 "res://scripts/": "yellow"
 }
+
+[gui]
+
+theme/custom_font="uid://dpw0a4uab2rbv"
 
 [input]
 
