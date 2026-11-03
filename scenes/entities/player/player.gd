@@ -40,7 +40,7 @@ func _ready():
 	await sprite.animation_finished
 	sprite.play("idle")
 	
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(1).timeout
 	Bubble.toggle_buble(self,Vector2(-20,-20))
 	Bubble.queue_text(["Hiiiii","Im Hamza"])
 
