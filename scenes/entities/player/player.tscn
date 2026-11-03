@@ -19,14 +19,6 @@
 [ext_resource type="Texture2D" uid="uid://b4wlau6xvph47" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/idle/01.png" id="17_dj766"]
 [ext_resource type="Texture2D" uid="uid://cbm06plf86bfj" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/idle/02.png" id="18_80gid"]
 [ext_resource type="Texture2D" uid="uid://lpfst2xrwqyg" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/idle/03.png" id="19_jdidn"]
-[ext_resource type="Texture2D" uid="uid://7gyokahhra5t" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/left_1/00.png" id="20_c2ktb"]
-[ext_resource type="Texture2D" uid="uid://44on70tnhixe" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/left_1/01.png" id="21_5tbmh"]
-[ext_resource type="Texture2D" uid="uid://bbjolwnib6e64" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/left_1/02.png" id="22_bumth"]
-[ext_resource type="Texture2D" uid="uid://dg845qqgq4r8l" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/left_1/03.png" id="23_avkvk"]
-[ext_resource type="Texture2D" uid="uid://dmrbxwt6decgq" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/right_2/00.png" id="24_daptw"]
-[ext_resource type="Texture2D" uid="uid://b2ww7aaxd0t57" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/right_2/01.png" id="25_qpxpq"]
-[ext_resource type="Texture2D" uid="uid://duhmrs468581x" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/right_2/02.png" id="26_ofi1a"]
-[ext_resource type="Texture2D" uid="uid://lhwb50otlox7" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/right_2/03.png" id="27_7n3y3"]
 [ext_resource type="Texture2D" uid="uid://djijtoxhbove1" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/warp/00.png" id="28_0l7wy"]
 [ext_resource type="Texture2D" uid="uid://dphfaaieopht8" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/warp/01.png" id="29_bxmn4"]
 [ext_resource type="Texture2D" uid="uid://d15yc57isd4q3" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/warp/02.png" id="30_f3lfh"]
@@ -88,7 +80,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"die",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -105,40 +97,6 @@ animations = [{
 }],
 "loop": 1,
 "name": &"idle",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("20_c2ktb")
-}, {
-"duration": 1.0,
-"texture": ExtResource("21_5tbmh")
-}, {
-"duration": 1.0,
-"texture": ExtResource("22_bumth")
-}, {
-"duration": 1.0,
-"texture": ExtResource("23_avkvk")
-}],
-"loop": 1,
-"name": &"left",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("24_daptw")
-}, {
-"duration": 1.0,
-"texture": ExtResource("25_qpxpq")
-}, {
-"duration": 1.0,
-"texture": ExtResource("26_ofi1a")
-}, {
-"duration": 1.0,
-"texture": ExtResource("27_7n3y3")
-}],
-"loop": 1,
-"name": &"right",
 "speed": 5.0
 }, {
 "frames": [{
@@ -168,7 +126,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"warp",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ucweq"]
@@ -177,12 +135,15 @@ radius = 29.017237
 [sub_resource type="CircleShape2D" id="CircleShape2D_nfrx5"]
 radius = 41.01219
 
+[sub_resource type="Gradient" id="Gradient_1lgw8"]
+colors = PackedColorArray(0.31764707, 0.7176471, 0.7882353, 0, 0.44242418, 0.97636014, 1.070584, 1)
+
 [node name="Player" type="CharacterBody2D" unique_id=1909375880]
 script = ExtResource("1_1lgw8")
 
 [node name="sprite" type="AnimatedSprite2D" parent="." unique_id=1549663275]
 sprite_frames = SubResource("SpriteFrames_0qees")
-animation = &"idle"
+animation = &"warp"
 autoplay = "idle"
 
 [node name="collision" type="CollisionShape2D" parent="." unique_id=1015923296]
@@ -196,7 +157,9 @@ shape = SubResource("CircleShape2D_nfrx5")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=472364406]
 
 [node name="line" type="Line2D" parent="." unique_id=756809026]
-position = Vector2(1, 11)
+top_level = true
+z_index = -1
 points = PackedVector2Array(-1, -1, -1, 23)
-width = 6.0
+width = 16.0
 default_color = Color(0.31764707, 0.7176471, 0.7882353, 1)
+gradient = SubResource("Gradient_1lgw8")

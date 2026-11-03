@@ -1,14 +1,20 @@
 extends CharacterBody2D
 
-
+@export var health:= 100
 
 @onready var sprite:AnimatedSprite2D = $sprite
 @onready var collision:CollisionShape2D = $collision
 @onready var area:Area2D = $area
 @onready var trail:Line2D = $line
 
+# Bullet constants
+const fire_ball_scene = preload("res://scenes/entities/player/fire_ball.tscn")
+const BULLET_OFFSET = 40.0
+
+# Trail Consts
 const TRAIL_OFFSET := 20.0 # How far the trail can go
 
+# Movement Constants
 const THRUST_POWER := 600.0 # acceleration
 const ROT_SPEED := 3.5 # for circular motion
 const MAX_SPEED := 500.0 # so player doesnt become too fast
@@ -17,21 +23,13 @@ const BRAKE_POWER := 400.0 # pressing 'back' force
 const BOOST_POWER := 1200.0
 const BOOST_MAX_SPEED := 800.0
 
+# Left time for each bit of trail
 var trail_left_times:Array[float]=[]
 
 func _ready():
-	trail.top_level = true
-	trail.global_position = Vector2.ZERO
-	trail.clear_points()
-	trail.z_index = -1
-	trail.width = 16.0
-	trail.default_color = Color8(81, 183, 201)
-	
-	
-	var fade := Gradient.new()
-	fade.set_color(0, Color8(81, 183, 201, 0))
-	fade.set_color(1, Color8(81, 183, 201, 255))
-	trail.gradient = fade
+	sprite.play("warp")
+	await sprite.animation_finished
+	sprite.play("idle")
 
 func _physics_process(delta: float) -> void:
 	
@@ -42,12 +40,19 @@ func _physics_process(delta: float) -> void:
 	var speed_cap := MAX_SPEED
 	
 	if Input.is_action_pressed("boost"):
+		sprite.play("boost")
 		speed_cap = BOOST_MAX_SPEED
 		velocity += forward_vector * BOOST_POWER * delta
 	elif Input.is_action_pressed("up"):
+		sprite.play("boost")
 		velocity += forward_vector * THRUST_POWER * delta
 	if Input.is_action_pressed("down"):
 		velocity = velocity.move_toward(Vector2.ZERO, BRAKE_POWER*delta)
+	
+	if Input.is_action_just_pressed("shoot"):
+		shoot(forward_vector)
+	
+	
 	
 	velocity = velocity.move_toward(Vector2.ZERO,DRAG*velocity.length()*delta)
 	velocity = velocity.limit_length(speed_cap)
@@ -64,3 +69,13 @@ func update_trial(forward_vector:Vector2)->void:
 	while trail_left_times.size() > 0 and now - trail_left_times[0] > 1.0:
 		trail.remove_point(0)
 		trail_left_times.pop_front()
+
+func shoot(forward_vector:Vector2):
+	var ball := fire_ball_scene.instantiate()
+	
+	# add to parent, instead of player
+	get_parent().add_child(ball)
+	
+	ball.global_position = global_position + forward_vector * BULLET_OFFSET
+	ball.rotation = rotation
+	ball.direction = forward_vector

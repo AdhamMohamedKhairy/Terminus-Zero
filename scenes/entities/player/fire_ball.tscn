@@ -1,13 +1,11 @@
 [gd_scene format=3 uid="uid://c40fxwcg22dsk"]
 
+[ext_resource type="Script" uid="uid://cb4vfuj1lc8sv" path="res://scenes/entities/player/fire_ball.gd" id="1_2hddx"]
 [ext_resource type="Texture2D" uid="uid://b5jmcta0g3mqx" path="res://assets/spaceship/FB001.png" id="1_l663o"]
 [ext_resource type="Texture2D" uid="uid://g8w064nvy7ja" path="res://assets/spaceship/FB002.png" id="2_lm1xk"]
 [ext_resource type="Texture2D" uid="uid://dih32gh0ucc2f" path="res://assets/spaceship/FB003.png" id="3_svpcc"]
 [ext_resource type="Texture2D" uid="uid://bolki7rmfy6l1" path="res://assets/spaceship/FB004.png" id="4_67t5x"]
 [ext_resource type="Texture2D" uid="uid://rhwxsduxjbgc" path="res://assets/spaceship/FB005.png" id="5_qwaip"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_nfrx5"]
-radius = 17.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0hvcy"]
 animations = [{
@@ -32,13 +30,17 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="FireBall" type="Area2D" unique_id=937204746]
+[sub_resource type="CircleShape2D" id="CircleShape2D_nfrx5"]
+radius = 17.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1091616160]
-shape = SubResource("CircleShape2D_nfrx5")
+[node name="FireBall" type="Area2D" unique_id=997407955]
+script = ExtResource("1_2hddx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=241578374]
 position = Vector2(2, 10)
 rotation = -1.5707964
 sprite_frames = SubResource("SpriteFrames_0hvcy")
-frame_progress = 0.087881155
+frame_progress = 0.58212656
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1091616160]
+shape = SubResource("CircleShape2D_nfrx5")
