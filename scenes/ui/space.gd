@@ -3,6 +3,7 @@ extends Node2D
 @onready var tile_map: TileMap = $TileMap
 @onready var camera: Camera2D = $Camera
 @onready var Player: CharacterBody2D = $Player
+@onready var enemy_one: CharacterBody2D = $EnemyOne
 
 var tile_size = 32
 var chunk_size = 100
@@ -55,3 +56,5 @@ func _physics_process(_delta: float) -> void:
 		load_chunk(world_size_start.x, world_size_start.y + 1)
 	elif player_position_negative.y < world_size_start.y:
 		load_chunk(world_size_start.x, world_size_start.y - 1)
+	print("PLayer :", Player.global_position)
+	print("Enemy :", enemy_one.global_position)
