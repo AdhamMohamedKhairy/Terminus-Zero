@@ -18,5 +18,6 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	position += Vector2(direction_x, 1.0) * speed * delta
+	@warning_ignore("narrowing_conversion")
 	speed += 10 * delta
 	
