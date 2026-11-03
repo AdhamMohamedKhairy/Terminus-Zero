@@ -26,13 +26,19 @@ const BOOST_MAX_SPEED := 800.0
 # Left time for each bit of trail
 var trail_left_times:Array[float]=[]
 
+var dead := false
+
 func _ready():
 	sprite.play("warp")
 	await sprite.animation_finished
 	sprite.play("idle")
+	
+	await get_tree().create_timer(2).timeout
+	take_damage(200)
 
 func _physics_process(delta: float) -> void:
-	
+	if dead:
+		return
 	rotation += Input.get_axis("left","right") * ROT_SPEED * delta
 	
 	var forward_vector := Vector2.UP.rotated(rotation)
@@ -79,3 +85,15 @@ func shoot(forward_vector:Vector2):
 	ball.global_position = global_position + forward_vector * BULLET_OFFSET
 	ball.rotation = rotation
 	ball.direction = forward_vector
+
+func take_damage(dmg:int):
+	if dead:
+		return
+	health-=dmg
+	if health <= 0:
+		velocity = Vector2.ZERO
+		collision.set_deferred("disabled",true)
+		dead = true
+		sprite.play("die")
+		await sprite.animation_finished
+		queue_free()
