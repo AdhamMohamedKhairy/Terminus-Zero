@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://dhktxl4j4btw3"]
+
+[ext_resource type="Script" uid="uid://1aj7yyf67noy" path="res://scenes/ui/simple-dialogues/dialogue.gd" id="1_ebloj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nfrx5"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.039215688, 0.09019608, 0.14117648, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_blend = true
+
+[sub_resource type="LabelSettings" id="LabelSettings_0hvcy"]
+font_size = 32
+shadow_size = 2
+
+[node name="Bubble" type="PanelContainer" unique_id=377354965]
+top_level = true
+z_index = 100
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_nfrx5")
+script = ExtResource("1_ebloj")
+
+[node name="Label" type="Label" parent="." unique_id=1353119332]
+layout_mode = 2
+text = "JSKLDJAKLSJDKLASJDKLJASKLDJASKLDJKALSJDKLAJSDKLSJAKDLJASKLDJKALSJDKLAJ"
+label_settings = SubResource("LabelSettings_0hvcy")
+horizontal_alignment = 1
+vertical_alignment = 1
