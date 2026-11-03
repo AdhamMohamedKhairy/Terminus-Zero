@@ -90,4 +90,4 @@ layer_1/z_index = 1
 
 [node name="Camera" type="Camera2D" parent="." unique_id=2105377674]
 
-[node name="CharacterBody2D" parent="." unique_id=959447175 instance=ExtResource("3_cv6j4")]
+[node name="Player" parent="." unique_id=959447175 instance=ExtResource("3_cv6j4")]

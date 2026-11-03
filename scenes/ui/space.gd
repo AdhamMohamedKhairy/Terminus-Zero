@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var tile_map: TileMap = $TileMap
 @onready var camera: Camera2D = $Camera
-@onready var player: CharacterBody2D = $CharacterBody2D
+@onready var Player: CharacterBody2D = $Player
 
 var tile_size = 32
 var chunk_size = 34
@@ -19,7 +19,7 @@ func _ready() -> void:
 	noise.frequency = 0.03
 	view_distance = (chunk_size / 2) - 1
 	load_chunk(0, 0)
-	player.position = Vector2((chunk_size * tile_size) / 2, (chunk_size * tile_size) / 2)
+	Player.position = Vector2((chunk_size * tile_size) / 2, (chunk_size * tile_size) / 2)
 
 func load_chunk(x, y) -> void:
 	tile_map.clear()
@@ -41,12 +41,12 @@ func load_chunk(x, y) -> void:
 				tile_map.set_cell(0, current_tile_position, 1, atlas_position)
 
 func _physics_process(_delta: float) -> void:
-	camera.position = player.position
+	camera.position = Player.position
 	var world_size = tile_map.get_used_rect() as Rect2i
 	var world_size_start = world_size.position
 	var world_size_end = world_size.end
-	var player_position_poisitive = (player.position / tile_size) + Vector2(view_distance, view_distance)
-	var player_position_negative = (player.position / tile_size) - Vector2(view_distance, view_distance)
+	var player_position_poisitive = (Player.position / tile_size) + Vector2(view_distance, view_distance)
+	var player_position_negative = (Player.position / tile_size) - Vector2(view_distance, view_distance)
 	if player_position_poisitive.x > world_size_end.x :
 		load_chunk(world_size_start.x + 1, world_size_start.y)
 	elif player_position_negative.x < world_size_start.x:
