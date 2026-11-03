@@ -5,13 +5,14 @@ extends Node2D
 @onready var Player: CharacterBody2D = $Player
 
 var tile_size = 32
-var chunk_size = 34
+var chunk_size = 100
 var view_distance = 16
 var noise = FastNoiseLite.new()
 
-var water_atlas_position = Vector2i(0, 0)
-var sand_atlas_position = Vector2i(1, 0)
-var grass_atlas_position = Vector2i(0, 2)
+var water_source_id = 2
+var sand_source_id = 0
+var grass_source_id = 1
+var rock_source_id = 1
 
 func _ready() -> void:
 	noise.noise_type = FastNoiseLite.TYPE_PERLIN
@@ -27,18 +28,17 @@ func load_chunk(x, y) -> void:
 		for _y in range(chunk_size):
 			var current_tile_position = Vector2i(_x + x, _y + y)
 			var n = noise.get_noise_2d(current_tile_position.x, current_tile_position.y)
-			var atlas_position: Vector2i
-			var place_tile := true
+			var source_id: int
 			if n < -0.3:
-				atlas_position = water_atlas_position
+				source_id = water_source_id
 			elif n < -0.1:
-				atlas_position = sand_atlas_position
+				source_id = sand_source_id
 			elif n < 0.4:
-				atlas_position = grass_atlas_position
+				source_id = grass_source_id
 			else:
-				place_tile = false
-			if place_tile and tile_map.get_cell_source_id(0, current_tile_position) == -1:
-				tile_map.set_cell(0, current_tile_position, 1, atlas_position)
+				source_id = rock_source_id
+			if tile_map.get_cell_source_id(0, current_tile_position) == -1:
+				tile_map.set_cell(0, current_tile_position, source_id, Vector2i(0, 0))
 
 func _physics_process(_delta: float) -> void:
 	camera.position = Player.position
