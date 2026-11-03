@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://p3v02c0qmwp3"]
+
+[ext_resource type="Script" uid="uid://be1y6qhgfgyfo" path="res://character_body_2d.gd" id="1_2rfrb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_onkbk"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=959447175]
+script = ExtResource("1_2rfrb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=208097967]
+shape = SubResource("CircleShape2D_onkbk")
