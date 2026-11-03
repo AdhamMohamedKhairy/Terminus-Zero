@@ -18,6 +18,7 @@ config/icon="uid://cb2uf0f28opt0"
 [autoload]
 
 Globals="*uid://cwviuojw56yw3"
+Bubble="*uid://bqc1pd0jm0mdt"
 
 [display]
 
