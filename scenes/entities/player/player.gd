@@ -112,6 +112,7 @@ func shoot(forward_vector:Vector2):
 func take_damage(dmg:int):
 	if has_shield:
 		toggle_shield(false)
+		Globals.shield -= 1
 		return
 	if dead:
 		return
@@ -126,6 +127,7 @@ func take_damage(dmg:int):
 
 func toggle_shield(state:bool):
 	print("TOGGLED")
+	Globals.shield = 2
 	if state:
 		shield_area.visible = true
 		shield_sprite.play("spawn")

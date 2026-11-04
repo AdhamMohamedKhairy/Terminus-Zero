@@ -78,7 +78,7 @@ region = Rect2(0, 40, 120, 32)
 atlas = ExtResource("3_xyp2f")
 region = Rect2(24, 72, 96, 16)
 
-[node name="EnemyOne" type="CharacterBody2D" unique_id=1685160798]
+[node name="EnemyOne" type="CharacterBody2D" unique_id=1685160798 groups=["hostile"]]
 script = ExtResource("1_q35jy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1543579178]
