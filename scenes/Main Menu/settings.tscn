@@ -159,7 +159,7 @@ resource_name = "back script"
 script/source = "extends Button
 
 func _on_pressed() -> void:
-	get_tree().change_scene_to_file(\"res://scenes/Main Menu/main_menu.tscn\")
+	get_tree().change_scene_to_file(\"res://scenes/ui/main_menu.tscn\")
 "
 
 [node name="Settings" type="Control" unique_id=709196258]
@@ -192,10 +192,10 @@ label_settings = SubResource("LabelSettings_nfrx5")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1528074352]
 layout_mode = 0
-offset_left = 240.0
-offset_top = 169.0
-offset_right = 1040.0
-offset_bottom = 469.0
+offset_left = 245.0
+offset_top = 210.0
+offset_right = 1045.0
+offset_bottom = 510.0
 size_flags_horizontal = 3
 follow_focus = true
 

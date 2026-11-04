@@ -9,13 +9,13 @@ var tile_size = 32
 var chunk_size = 100
 var view_distance = 16
 var noise = FastNoiseLite.new()
-
 var water_source_id = 2
 var sand_source_id = 0
 var grass_source_id = 1
 var rock_source_id = 1
 
 func _ready() -> void:
+	$DeathScreen.visible = false
 	noise.noise_type = FastNoiseLite.TYPE_PERLIN
 	noise.seed = randi()
 	noise.frequency = 0.03
@@ -56,4 +56,6 @@ func _physics_process(_delta: float) -> void:
 		load_chunk(world_size_start.x, world_size_start.y + 1)
 	elif player_position_negative.y < world_size_start.y:
 		load_chunk(world_size_start.x, world_size_start.y - 1)
-	print(Player.global_position)
+	if Player.dead:
+		get_tree().paused = true
+		$DeathScreen.visible = true
