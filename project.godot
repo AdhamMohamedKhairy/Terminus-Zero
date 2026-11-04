@@ -13,6 +13,11 @@ config_version=5
 config/name="Terminus Zero"
 config/features=PackedStringArray("4.7", "Forward Plus")
 
+[autoload]
+
+Globals="*uid://cwviuojw56yw3"
+Bubble="*uid://bqc1pd0jm0mdt"
+
 [display]
 
 window/size/viewport_width=1280
@@ -88,3 +93,4 @@ interact={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+rendering_device/driver.windows="Vulkan"
