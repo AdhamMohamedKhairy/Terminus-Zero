@@ -9,7 +9,7 @@ region = Rect2(153, 58, 30, 30)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ad8vj"]
 size = Vector2(30, 30)
 
-[node name="ShieldBuff" type="Area2D" unique_id=147967873]
+[node name="ShieldBuff" type="Area2D" unique_id=147967873 groups=["shield_buff"]]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=421021993]
 texture = SubResource("AtlasTexture_onkbk")
