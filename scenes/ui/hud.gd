@@ -13,7 +13,10 @@ func _ready() -> void:
 	fuel.text = str(Globals.fuel) + "/1000"
 	hp.text = str(Globals.health) + "HP"
 	health.value = Globals.health
-	shield.value = Globals.shield
+	if Globals.has_shield == true:
+		shield.value = 1
+	else:
+		shield.value = 0
 	health.animation = "default"
 	gas.frame = 4
 	boost.frame = Globals.boosts
