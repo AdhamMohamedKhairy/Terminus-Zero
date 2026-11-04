@@ -1,94 +1,24 @@
 [gd_scene format=3 uid="uid://dp045jhs8b7dv"]
 
 [ext_resource type="Script" uid="uid://drnjujtd6akap" path="res://scenes/enemies/smol_chimkens.gd" id="1_2pb43"]
-[ext_resource type="Texture2D" uid="uid://djusbvcrndn5m" path="res://assets/chicken/BlockyChickenSpriteSheet.png" id="2_3rtbo"]
+[ext_resource type="Texture2D" uid="uid://1pa31v7xdf5t" path="res://assets/space_monsters/eye_green.png" id="2_2pb43"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3rtbo"]
+atlas = ExtResource("2_2pb43")
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t8mko"]
-atlas = ExtResource("2_3rtbo")
-region = Rect2(0, 160, 40, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fou7w"]
-atlas = ExtResource("2_3rtbo")
-region = Rect2(40, 160, 40, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_m4bey"]
-atlas = ExtResource("2_3rtbo")
-region = Rect2(80, 160, 40, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_s1b7q"]
-atlas = ExtResource("2_3rtbo")
-region = Rect2(120, 160, 40, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_myd7x"]
-atlas = ExtResource("2_3rtbo")
-region = Rect2(160, 160, 40, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_g70xl"]
-atlas = ExtResource("2_3rtbo")
-region = Rect2(200, 160, 40, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3c17t"]
-atlas = ExtResource("2_3rtbo")
-region = Rect2(240, 160, 40, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_iq67i"]
-atlas = ExtResource("2_3rtbo")
-region = Rect2(280, 160, 40, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ye7n2"]
-atlas = ExtResource("2_3rtbo")
-region = Rect2(0, 200, 40, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5s66a"]
-atlas = ExtResource("2_3rtbo")
-region = Rect2(40, 200, 40, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ea3cc"]
-atlas = ExtResource("2_3rtbo")
-region = Rect2(80, 200, 40, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_w0wnu"]
-atlas = ExtResource("2_3rtbo")
-region = Rect2(120, 200, 40, 40)
+atlas = ExtResource("2_2pb43")
+region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s7wsd"]
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_3rtbo")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_t8mko")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fou7w")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_m4bey")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_s1b7q")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_myd7x")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_g70xl")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3c17t")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_iq67i")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ye7n2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5s66a")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ea3cc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_w0wnu")
 }],
 "loop": 1,
 "name": &"default",
@@ -96,6 +26,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_s7wsd"]
+radius = 17.029387
 
 [node name="SmolChimkens" type="CharacterBody2D" unique_id=1232875284]
 script = ExtResource("1_2pb43")
@@ -108,5 +39,8 @@ frame_progress = 0.83036083
 [node name="Area2D" type="Area2D" parent="." unique_id=2039856017]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=361522938]
-position = Vector2(0, 4)
+position = Vector2(1, 0)
 shape = SubResource("CircleShape2D_s7wsd")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

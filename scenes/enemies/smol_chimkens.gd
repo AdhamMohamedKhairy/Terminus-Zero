@@ -1,5 +1,5 @@
 extends CharacterBody2D
-const SPEED = 25.0
+const SPEED = 50.0
 const ARC_ANGLE = rad_to_deg(50.0)
 const ARC_RANGE = 400
 
@@ -20,3 +20,10 @@ func _physics_process(delta: float) -> void:
 	velocity = to.normalized().rotated(arc) * SPEED
 
 	move_and_slide()
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		Globals.green_blob.emit()
+	if body.is_in_group("player_attack"):
+		Globals.score += 1
+		hide()
