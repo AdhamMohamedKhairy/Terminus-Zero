@@ -80,6 +80,7 @@ func _physics_process(delta: float) -> void:
 	
 	# Export velocity for other usages
 	player_velocity = velocity
+	toggle_shield(has_shield)
 	move_and_slide()
 	
 	# Update trail following the spaceship
@@ -133,8 +134,19 @@ func toggle_shield(state:bool):
 		shield_sprite.play("idle")
 		has_shield = true
 	else:
-		shield_sprite.play("die")
+		shield_sprite.play("explode")
 		await shield_sprite.animation_finished
 		shield_collision.set_deferred("disabled",true)
 		shield_area.visible = false
 		has_shield = false
+
+func _on_area_area_entered(area: Area2D) -> void:
+	if area.is_in_group("shield_buff"):
+		has_shield = true
+		area.queue_free()
+	elif area.is_in_group("bullet_buff"):
+		pass
+	elif area.is_in_group("speed_buff"):
+		pass
+	if area.is_in_group("hostile"):
+		take_damage(10)

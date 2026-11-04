@@ -58,7 +58,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="EnemyOneLazer" type="Area2D" unique_id=220029605]
+[node name="EnemyOneLazer" type="Area2D" unique_id=220029605 groups=["hostile"]]
 script = ExtResource("1_pkj8k")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1359257378]

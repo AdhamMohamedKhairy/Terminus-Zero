@@ -1,127 +1,66 @@
 [gd_scene format=3 uid="uid://cvwekgqbiskty"]
 
-[ext_resource type="Texture2D" uid="uid://cdfplhfn8ffop" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/hit/00.png" id="1_23lxu"]
 [ext_resource type="Script" uid="uid://cogbj5q8kskuu" path="res://scenes/enemies/enemy_one.gd" id="1_q35jy"]
-[ext_resource type="Texture2D" uid="uid://bdom2wfobcjg2" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/hit/01.png" id="2_q35jy"]
-[ext_resource type="Texture2D" uid="uid://c2mb6oqo8q74j" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/hit/02.png" id="3_apfa1"]
-[ext_resource type="Texture2D" uid="uid://ccokjh3svqgsu" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/hit/03.png" id="4_fu8rm"]
-[ext_resource type="Texture2D" uid="uid://ci14dclapxev0" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/idle/00.png" id="5_so8hl"]
-[ext_resource type="Texture2D" uid="uid://b4wlau6xvph47" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/idle/01.png" id="6_qpo0e"]
-[ext_resource type="Texture2D" uid="uid://cbm06plf86bfj" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/idle/02.png" id="7_3peoh"]
-[ext_resource type="Texture2D" uid="uid://lpfst2xrwqyg" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/idle/03.png" id="8_rjy6s"]
-[ext_resource type="Texture2D" uid="uid://bftb2rnq4x6yi" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/left_2/00.png" id="9_ypvnm"]
-[ext_resource type="Texture2D" uid="uid://bc2jxfm4o4np" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/left_2/01.png" id="10_eb13b"]
-[ext_resource type="Texture2D" uid="uid://wyvrebcmjd5i" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/left_2/02.png" id="11_hmmac"]
-[ext_resource type="Texture2D" uid="uid://bsvqse3mpnjc0" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/left_2/03.png" id="12_4kb3l"]
-[ext_resource type="Texture2D" uid="uid://dmrbxwt6decgq" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/right_2/00.png" id="13_xvbo4"]
-[ext_resource type="Texture2D" uid="uid://b2ww7aaxd0t57" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/right_2/01.png" id="14_ygc0o"]
-[ext_resource type="Texture2D" uid="uid://duhmrs468581x" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/right_2/02.png" id="15_7asjd"]
-[ext_resource type="Texture2D" uid="uid://lhwb50otlox7" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/right_2/03.png" id="16_ddl8e"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sq27n"]
-atlas = ExtResource("5_so8hl")
-region = Rect2(0, 0, 64, 80)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_s480t"]
-atlas = ExtResource("6_qpo0e")
-region = Rect2(0, 0, 64, 80)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3snww"]
-atlas = ExtResource("7_3peoh")
-region = Rect2(0, 0, 64, 80)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8albm"]
-atlas = ExtResource("8_rjy6s")
-region = Rect2(0, 0, 64, 80)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_uq4kc"]
-atlas = ExtResource("9_ypvnm")
-region = Rect2(0, 0, 64, 80)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yoijt"]
-atlas = ExtResource("10_eb13b")
-region = Rect2(0, 0, 64, 80)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_iv7be"]
-atlas = ExtResource("11_hmmac")
-region = Rect2(0, 0, 64, 80)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wxr1l"]
-atlas = ExtResource("12_4kb3l")
-region = Rect2(0, 0, 64, 80)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_m0px5"]
-atlas = ExtResource("13_xvbo4")
-region = Rect2(0, 0, 64, 80)
+[ext_resource type="Texture2D" uid="uid://b3tf34rlqt5up" path="res://assets/SpaceRage/Player/player_b_m.png" id="2_3o0ga"]
+[ext_resource type="Texture2D" uid="uid://b01lmwmv2kwn8" path="res://assets/SpaceRage/Explosions/explosion_1_01.png" id="2_o21mx"]
+[ext_resource type="Texture2D" uid="uid://d2iblsglkbh3x" path="res://assets/SpaceRage/Explosions/explosion_1_02.png" id="3_fr371"]
+[ext_resource type="Texture2D" uid="uid://jair0io1latn" path="res://assets/vii/enemy_health_bar.png" id="3_xyp2f"]
+[ext_resource type="Texture2D" uid="uid://cepc0w11ekud1" path="res://assets/SpaceRage/Explosions/explosion_1_03.png" id="4_23lxu"]
+[ext_resource type="Texture2D" uid="uid://wk47lq28trae" path="res://assets/SpaceRage/Explosions/explosion_1_04.png" id="5_q35jy"]
+[ext_resource type="Texture2D" uid="uid://dsw835pyl83ke" path="res://assets/SpaceRage/Explosions/explosion_1_05.png" id="6_apfa1"]
+[ext_resource type="Texture2D" uid="uid://cyq0f1ok6ldwb" path="res://assets/SpaceRage/Explosions/explosion_1_06.png" id="7_fu8rm"]
+[ext_resource type="Texture2D" uid="uid://cx4tywd3cdic6" path="res://assets/SpaceRage/Explosions/explosion_1_07.png" id="8_so8hl"]
+[ext_resource type="Texture2D" uid="uid://cc4ra5uo2d1o3" path="res://assets/SpaceRage/Explosions/explosion_1_09.png" id="9_qpo0e"]
+[ext_resource type="Texture2D" uid="uid://c5ioqx5ba3fik" path="res://assets/SpaceRage/Explosions/explosion_1_08.png" id="10_3peoh"]
+[ext_resource type="Texture2D" uid="uid://dth615kmxbbuw" path="res://assets/SpaceRage/Explosions/explosion_1_10.png" id="11_rjy6s"]
+[ext_resource type="Texture2D" uid="uid://dcmoog0075kse" path="res://assets/SpaceRage/Explosions/explosion_1_11.png" id="12_ypvnm"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_onkbk"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_23lxu")
+"texture": ExtResource("2_o21mx")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_q35jy")
+"texture": ExtResource("3_fr371")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_apfa1")
+"texture": ExtResource("4_23lxu")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_fu8rm")
+"texture": ExtResource("5_q35jy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_apfa1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_fu8rm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_so8hl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_qpo0e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_3peoh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_rjy6s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ypvnm")
 }],
-"loop": 1,
-"name": &"hit",
-"speed": 5.0
+"loop": 0,
+"name": &"death",
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_sq27n")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_s480t")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3snww")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8albm")
+"texture": ExtResource("2_3o0ga")
 }],
 "loop": 1,
 "name": &"idle",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_uq4kc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yoijt")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_iv7be")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wxr1l")
-}],
-"loop": 1,
-"name": &"left",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_m0px5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_ygc0o")
-}, {
-"duration": 1.0,
-"texture": ExtResource("15_7asjd")
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_ddl8e")
-}],
-"loop": 1,
-"name": &"right",
 "speed": 5.0
 }]
 
@@ -129,10 +68,15 @@ animations = [{
 size = Vector2(29, 50)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ad8vj"]
-radius = 161.60754
+radius = 200.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_kaadr"]
-radius = 251.01793
+[sub_resource type="AtlasTexture" id="AtlasTexture_gddjn"]
+atlas = ExtResource("3_xyp2f")
+region = Rect2(0, 40, 120, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m32ru"]
+atlas = ExtResource("3_xyp2f")
+region = Rect2(24, 72, 96, 16)
 
 [node name="EnemyOne" type="CharacterBody2D" unique_id=1685160798]
 script = ExtResource("1_q35jy")
@@ -140,9 +84,10 @@ script = ExtResource("1_q35jy")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1543579178]
 rotation = 1.5707964
 sprite_frames = SubResource("SpriteFrames_onkbk")
-animation = &"idle"
-frame = 1
-frame_progress = 0.2930184
+animation = &"death"
+autoplay = "idle"
+frame = 10
+frame_progress = 1.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1690306089]
 visible = false
@@ -158,23 +103,35 @@ rotation = 1.5707964
 shape = SubResource("RectangleShape2D_ad8vj")
 
 [node name="EnterArea" type="Area2D" parent="." unique_id=1995774781]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnterArea" unique_id=807061616]
-visible = false
 shape = SubResource("CircleShape2D_ad8vj")
 
-[node name="ExitArea" type="Area2D" parent="." unique_id=517653205]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitArea" unique_id=2058730142]
-visible = false
-shape = SubResource("CircleShape2D_kaadr")
-
 [node name="BulletTimer" type="Timer" parent="." unique_id=1582214666]
+wait_time = 0.3
 autostart = true
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=1962560964]
 position = Vector2(36, 0)
 
+[node name="HitArea" type="Area2D" parent="." unique_id=220904363]
+visible = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HitArea" unique_id=49869541]
+polygon = PackedVector2Array(-7, 23, -1, 16, 6, 15, 9, 10, 26, 3, 28, 1, 28, -3, 26, -5, 9, -13, 6, -18, -1, -19, -6, -25, -15, -23, -14, -17, -22, -12, -20, -6, -20, 3, -22, 9, -14, 15, -15, 20)
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=1983136367]
+offset_left = -59.0
+offset_top = -54.0
+offset_right = 61.0
+offset_bottom = -22.0
+min_value = 1.0
+value = 1.0
+texture_under = SubResource("AtlasTexture_gddjn")
+texture_progress = SubResource("AtlasTexture_m32ru")
+texture_progress_offset = Vector2(24, 7)
+
 [connection signal="body_entered" from="EnterArea" to="." method="_on_enter_area_body_entered"]
-[connection signal="body_exited" from="ExitArea" to="." method="_on_exit_area_body_exited"]
 [connection signal="timeout" from="BulletTimer" to="." method="_on_bullet_timer_timeout"]
+[connection signal="area_entered" from="HitArea" to="." method="_on_hit_area_area_entered"]
