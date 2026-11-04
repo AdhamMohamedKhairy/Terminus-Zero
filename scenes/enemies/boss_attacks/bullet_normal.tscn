@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://dslh4i6wi73mp"]
+
+[ext_resource type="Script" uid="uid://broc5hngwqmvi" path="res://scenes/enemies/boss_attacks/bullet_normal.gd" id="1_770am"]
+[ext_resource type="Texture2D" uid="uid://brqviujqdogs" path="res://assets/Space Game - Pixel Assets/In Game Elements/Bullet - Player.png" id="1_t8p3h"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_770am"]
+atlas = ExtResource("1_t8p3h")
+region = Rect2(0, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5o1wl"]
+atlas = ExtResource("1_t8p3h")
+region = Rect2(20, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n5geu"]
+atlas = ExtResource("1_t8p3h")
+region = Rect2(40, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wh4mw"]
+atlas = ExtResource("1_t8p3h")
+region = Rect2(60, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nunf2"]
+atlas = ExtResource("1_t8p3h")
+region = Rect2(0, 20, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ti7bn"]
+atlas = ExtResource("1_t8p3h")
+region = Rect2(0, 0, 20, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nfrx5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_770am")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5o1wl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n5geu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wh4mw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nunf2")
+}],
+"loop": 0,
+"name": &"collide",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ti7bn")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nfrx5"]
+radius = 8.0
+
+[node name="BulletNormal" type="Area2D" unique_id=1663034393 groups=["hostile"]]
+script = ExtResource("1_770am")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=275830056]
+sprite_frames = SubResource("SpriteFrames_nfrx5")
+animation = &"collide"
+autoplay = "default"
+frame = 4
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1422119173]
+shape = SubResource("CircleShape2D_nfrx5")

@@ -8,10 +8,17 @@
 
 config_version=5
 
+[animation]
+
+warnings/main_scene="uid://464cc18kpaho"
+warnings/icon="uid://cb2uf0f28opt0"
+
 [application]
 
 config/name="Terminus Zero"
+run/main_scene="uid://lqcldaokvavr"
 config/features=PackedStringArray("4.7", "Forward Plus")
+config/icon="uid://cb2uf0f28opt0"
 
 [autoload]
 

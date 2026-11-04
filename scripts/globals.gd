@@ -6,4 +6,10 @@ var velocity: float
 var score: int = 0
 var fuel: int = 1000
 var boosts: int = 0 #this shoukld range from 0 to 3 @Hazoro
-signal out_of_fuel #if this is emited, make the trail disappear and spx would go 3x slower
+signal out_of_fuel #if this is emmited, make the trail disappear and spx would go 3x slower
+var player:CharacterBody2D=null
+func _process(delta: float) -> void:
+	if player ==null:
+		var fetched_player = get_tree().get_first_node_in_group("player")
+		if player != null:
+			player = fetched_player
