@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cebwhqrv2a11p"]
+
+[ext_resource type="Texture2D" uid="uid://cm3rieqc4r2cq" path="res://assets/vii/gas_station.png" id="1_0k84q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_onkbk"]
+size = Vector2(93, 35)
+
+[node name="GasStation" type="StaticBody2D" unique_id=439218340]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1963764423]
+texture = ExtResource("1_0k84q")
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="." unique_id=1994034713]
+polygon = PackedVector2Array(-44, 60, -37, 60, -31, 56, -31, 21, 62, 21, 62, -46, -31, -46, -31, -52, -37, -56, -44, -56, -50, -52, -50, 56)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1072010001]
+offset_left = -31.0
+offset_top = 21.0
+offset_right = 62.0
+offset_bottom = 56.0
+color = Color(0.37413925, 0.37413928, 0.37413922, 1)
+
+[node name="RefuelingArea" type="Area2D" parent="." unique_id=1409038159]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RefuelingArea" unique_id=1278924752]
+position = Vector2(15.5, 38.5)
+shape = SubResource("RectangleShape2D_onkbk")

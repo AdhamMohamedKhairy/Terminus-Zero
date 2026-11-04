@@ -42,6 +42,8 @@ folder_colors={
 
 speed_buff=""
 shield_buff=""
+hostile=""
+player_attack=""
 
 [input]
 

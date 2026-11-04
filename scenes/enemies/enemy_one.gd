@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 @onready var player_node: CharacterBody2D = get_parent().get_node("Player")
 @onready var bullet_scene = load("res://scenes/ui/enemy_one_lazer.tscn")
+@onready var texture_progress_bar: TextureProgressBar = $TextureProgressBar
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 @export var health : int = 100
 @export var THRUST_POWER : float = 1000.0
@@ -31,6 +33,11 @@ func _physics_process(delta: float) -> void:
 		velocity = velocity.move_toward(Vector2.ZERO, DRAG * velocity.length() * delta)
 		velocity = velocity.limit_length(MAX_SPEED)
 		move_and_slide()
+		texture_progress_bar.value = health
+		if health <= 0:
+			animated_sprite_2d.play("death")
+			await animated_sprite_2d.animation_finished
+			queue_free()
 
 func _on_enter_area_body_entered(body: Node2D) -> void:
 	if body == player_node:
@@ -44,3 +51,7 @@ func _on_bullet_timer_timeout() -> void:
 		bullet.global_position = $Marker2D.global_position
 		bullet.rotation = direction.angle() + PI / 2
 		bullet.direction = direction
+
+func _on_hit_area_area_entered(area: Area2D) -> void:
+	if area.is_in_group("player_attack"):
+		health -= 20
