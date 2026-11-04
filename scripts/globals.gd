@@ -4,4 +4,4 @@ var health: int = 100
 var velocity: float
 var score: int = 0
 var boosts: int = 0 #this shoukld range from 0 to 3 @Hazoro
-signal out_of_fuel
+signal out_of_fuel #if this is emited, make the trail disappear and spx would go 3x slower
