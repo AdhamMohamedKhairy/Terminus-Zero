@@ -1,22 +1,22 @@
 [gd_scene format=3 uid="uid://cvwekgqbiskty"]
 
-[ext_resource type="Texture2D" uid="uid://cdfplhfn8ffop" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/hit/00.png" id="1_23lxu"]
+[ext_resource type="Texture2D" uid="uid://cdfplhfn8ffop" path="res://assets/spaceship/hit/00.png" id="1_23lxu"]
 [ext_resource type="Script" uid="uid://cogbj5q8kskuu" path="res://scenes/enemies/enemy_one.gd" id="1_q35jy"]
-[ext_resource type="Texture2D" uid="uid://bdom2wfobcjg2" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/hit/01.png" id="2_q35jy"]
-[ext_resource type="Texture2D" uid="uid://c2mb6oqo8q74j" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/hit/02.png" id="3_apfa1"]
-[ext_resource type="Texture2D" uid="uid://ccokjh3svqgsu" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/hit/03.png" id="4_fu8rm"]
-[ext_resource type="Texture2D" uid="uid://ci14dclapxev0" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/idle/00.png" id="5_so8hl"]
-[ext_resource type="Texture2D" uid="uid://b4wlau6xvph47" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/idle/01.png" id="6_qpo0e"]
-[ext_resource type="Texture2D" uid="uid://cbm06plf86bfj" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/idle/02.png" id="7_3peoh"]
-[ext_resource type="Texture2D" uid="uid://lpfst2xrwqyg" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/idle/03.png" id="8_rjy6s"]
-[ext_resource type="Texture2D" uid="uid://bftb2rnq4x6yi" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/left_2/00.png" id="9_ypvnm"]
-[ext_resource type="Texture2D" uid="uid://bc2jxfm4o4np" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/left_2/01.png" id="10_eb13b"]
-[ext_resource type="Texture2D" uid="uid://wyvrebcmjd5i" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/left_2/02.png" id="11_hmmac"]
-[ext_resource type="Texture2D" uid="uid://bsvqse3mpnjc0" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/left_2/03.png" id="12_4kb3l"]
-[ext_resource type="Texture2D" uid="uid://dmrbxwt6decgq" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/right_2/00.png" id="13_xvbo4"]
-[ext_resource type="Texture2D" uid="uid://b2ww7aaxd0t57" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/right_2/01.png" id="14_ygc0o"]
-[ext_resource type="Texture2D" uid="uid://duhmrs468581x" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/right_2/02.png" id="15_7asjd"]
-[ext_resource type="Texture2D" uid="uid://lhwb50otlox7" path="res://assets/SciFiStarships_Kestrel_FREE/frames/kestrel/top/right_2/03.png" id="16_ddl8e"]
+[ext_resource type="Texture2D" uid="uid://bdom2wfobcjg2" path="res://assets/spaceship/hit/01.png" id="2_q35jy"]
+[ext_resource type="Texture2D" uid="uid://c2mb6oqo8q74j" path="res://assets/spaceship/hit/02.png" id="3_apfa1"]
+[ext_resource type="Texture2D" uid="uid://ccokjh3svqgsu" path="res://assets/spaceship/hit/03.png" id="4_fu8rm"]
+[ext_resource type="Texture2D" uid="uid://ci14dclapxev0" path="res://assets/spaceship/idle/00.png" id="5_so8hl"]
+[ext_resource type="Texture2D" uid="uid://b4wlau6xvph47" path="res://assets/spaceship/idle/01.png" id="6_qpo0e"]
+[ext_resource type="Texture2D" uid="uid://cbm06plf86bfj" path="res://assets/spaceship/idle/02.png" id="7_3peoh"]
+[ext_resource type="Texture2D" uid="uid://lpfst2xrwqyg" path="res://assets/spaceship/idle/03.png" id="8_rjy6s"]
+[ext_resource type="Texture2D" uid="uid://bftb2rnq4x6yi" path="res://assets/spaceship/left_2/00.png" id="9_ypvnm"]
+[ext_resource type="Texture2D" uid="uid://bc2jxfm4o4np" path="res://assets/spaceship/left_2/01.png" id="10_eb13b"]
+[ext_resource type="Texture2D" uid="uid://wyvrebcmjd5i" path="res://assets/spaceship/left_2/02.png" id="11_hmmac"]
+[ext_resource type="Texture2D" uid="uid://bsvqse3mpnjc0" path="res://assets/spaceship/left_2/03.png" id="12_4kb3l"]
+[ext_resource type="Texture2D" uid="uid://dmrbxwt6decgq" path="res://assets/spaceship/right_2/00.png" id="13_xvbo4"]
+[ext_resource type="Texture2D" uid="uid://b2ww7aaxd0t57" path="res://assets/spaceship/right_2/01.png" id="14_ygc0o"]
+[ext_resource type="Texture2D" uid="uid://duhmrs468581x" path="res://assets/spaceship/right_2/02.png" id="15_7asjd"]
+[ext_resource type="Texture2D" uid="uid://lhwb50otlox7" path="res://assets/spaceship/right_2/03.png" id="16_ddl8e"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sq27n"]
 atlas = ExtResource("5_so8hl")
@@ -129,10 +129,7 @@ animations = [{
 size = Vector2(29, 50)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ad8vj"]
-radius = 161.60754
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_kaadr"]
-radius = 251.01793
+radius = 200.0
 
 [node name="EnemyOne" type="CharacterBody2D" unique_id=1685160798]
 script = ExtResource("1_q35jy")
@@ -160,21 +157,14 @@ shape = SubResource("RectangleShape2D_ad8vj")
 [node name="EnterArea" type="Area2D" parent="." unique_id=1995774781]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnterArea" unique_id=807061616]
-visible = false
 shape = SubResource("CircleShape2D_ad8vj")
 
-[node name="ExitArea" type="Area2D" parent="." unique_id=517653205]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitArea" unique_id=2058730142]
-visible = false
-shape = SubResource("CircleShape2D_kaadr")
-
 [node name="BulletTimer" type="Timer" parent="." unique_id=1582214666]
+wait_time = 0.3
 autostart = true
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=1962560964]
 position = Vector2(36, 0)
 
 [connection signal="body_entered" from="EnterArea" to="." method="_on_enter_area_body_entered"]
-[connection signal="body_exited" from="ExitArea" to="." method="_on_exit_area_body_exited"]
 [connection signal="timeout" from="BulletTimer" to="." method="_on_bullet_timer_timeout"]

@@ -4,24 +4,37 @@ extends CharacterBody2D
 @onready var bullet_scene = load("res://scenes/ui/enemy_one_lazer.tscn")
 
 @export var health : int = 100
+@export var THRUST_POWER : float = 1000.0
+@export var MAX_SPEED : float = 450.0
+@export var DRAG : float = 0.9
+@export var ROT_SPEED : float = 10.0
+@export var BRAKE_DISTANCE : float = 150.0
+@export var STOP_DISTANCE : float = 60.0
 
-var speed : float = 65.0
 var should_chase : bool = false
 
 func _physics_process(delta: float) -> void:
 	if should_chase:
-		var direction = (player_node.global_position - global_position).normalized()
-		velocity = lerp(velocity, direction * speed, 8.5 * delta)
+		var to_player := player_node.global_position - global_position
+		var distance : float = to_player.length()
+		var target_angle := to_player.angle()
+		rotation = rotate_toward(rotation, target_angle, ROT_SPEED * delta)
+		var forward_vector := Vector2.RIGHT.rotated(rotation)
+		if not $EnterArea.overlaps_body(player_node):
+			if distance > STOP_DISTANCE:
+				var thrust_scale : float = clamp((distance - STOP_DISTANCE) / BRAKE_DISTANCE, 0.0, 1.0)
+				velocity += forward_vector * THRUST_POWER * thrust_scale * delta
+			else:
+				velocity = velocity.move_toward(Vector2.ZERO, THRUST_POWER * delta)
+		else:
+			velocity = velocity.move_toward(Vector2.ZERO, THRUST_POWER * delta)
+		velocity = velocity.move_toward(Vector2.ZERO, DRAG * velocity.length() * delta)
+		velocity = velocity.limit_length(MAX_SPEED)
 		move_and_slide()
-		look_at(player_node.global_position)
 
 func _on_enter_area_body_entered(body: Node2D) -> void:
 	if body == player_node:
 		should_chase = true
-
-func _on_exit_area_body_exited(body: Node2D) -> void:
-	if body == player_node:
-		should_chase = false
 
 func _on_bullet_timer_timeout() -> void:
 	if should_chase == true:

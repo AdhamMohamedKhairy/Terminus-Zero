@@ -3,9 +3,9 @@
 [ext_resource type="Script" uid="uid://d38bipnvq285w" path="res://scenes/ui/space.gd" id="1_giw73"]
 [ext_resource type="Texture2D" uid="uid://c50t2xu7vkbwp" path="res://assets/vii/Backgrounds/black.png" id="1_y0hpv"]
 [ext_resource type="Texture2D" uid="uid://dxpsl2nfsuh5p" path="res://assets/vii/Backgrounds/darkPurple.png" id="2_etacg"]
-[ext_resource type="PackedScene" uid="uid://p3v02c0qmwp3" path="res://scenes/ui/test_player.tscn" id="3_cv6j4"]
 [ext_resource type="Texture2D" uid="uid://5c36vtwj6qta" path="res://assets/vii/Backgrounds/purple.png" id="4_07aq1"]
 [ext_resource type="PackedScene" uid="uid://cvwekgqbiskty" path="res://scenes/enemies/enemy_one.tscn" id="4_upnq1"]
+[ext_resource type="PackedScene" uid="uid://b5qmlnw8qgv7x" path="res://scenes/entities/player/player.tscn" id="6_etacg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yelc6"]
 texture = ExtResource("2_etacg")
@@ -230,8 +230,9 @@ layer_1/z_index = 1
 
 [node name="Camera" type="Camera2D" parent="." unique_id=2105377674]
 
-[node name="Player" parent="." unique_id=959447175 instance=ExtResource("3_cv6j4")]
-
 [node name="EnemyOne" parent="." unique_id=1685160798 instance=ExtResource("4_upnq1")]
 
 [node name="EnemyBullets" type="Node2D" parent="." unique_id=191253091]
+
+[node name="Player" parent="." unique_id=1909375880 instance=ExtResource("6_etacg")]
+position = Vector2(281, 1)
