@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b5qmlnw8qgv7x" path="res://scenes/entities/player/player.tscn" id="6_etacg"]
 [ext_resource type="PackedScene" uid="uid://d28s8igeol47y" path="res://scenes/ui/shield_buff.tscn" id="7_07aq1"]
 [ext_resource type="PackedScene" uid="uid://bcifottfwitjl" path="res://scenes/ui/death_screen.tscn" id="8_yelc6"]
+[ext_resource type="PackedScene" uid="uid://cebwhqrv2a11p" path="res://scenes/gas_station/gas_station.tscn" id="9_emwyr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yelc6"]
 texture = ExtResource("2_etacg")
@@ -245,3 +246,5 @@ position = Vector2(247, -42)
 [node name="DeathScreen" parent="." unique_id=2020768921 instance=ExtResource("8_yelc6")]
 process_mode = 3
 visible = false
+
+[node name="GasStation" parent="." unique_id=439218340 instance=ExtResource("9_emwyr")]

@@ -43,7 +43,7 @@ func _process(delta: float) -> void:
 	
 	var nearest: Node2D = null
 	var nearest_dist := INF
-	for i in get_tree().get_nodes_in_group("hostile"):
+	for i in get_tree().get_nodes_in_group("tracked_by_arrow"):
 		var e := i as Node2D
 		var d := player.global_position.distance_squared_to(e.global_position)
 		if d < nearest_dist:
@@ -69,4 +69,3 @@ func gas_frame_change():
 		gas.frame = 2
 	elif Globals.fuel == 0:
 		gas.fuel = 1
-		

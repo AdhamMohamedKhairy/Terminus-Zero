@@ -1,5 +1,14 @@
 extends Node2D
 
+const CELL := 600
+const GEN_RADIUS := 3
+const SAFE_DISTANCE := 500.0
+const FUEL_SCORE := 30
+const FUEL_DIST := 4000
+
+@export var enemy_one_scene: PackedScene = load("res://scenes/enemies/enemy_one.tscn")
+@export var boss_scene: PackedScene
+@export var fuel_scen: PackedScene = load("res://scenes/gas_station/gas_station.tscn")
 @onready var tile_map: TileMap = $TileMap
 @onready var camera: Camera2D = $Camera
 @onready var Player: CharacterBody2D = $Player
@@ -13,6 +22,9 @@ var water_source_id = 2
 var sand_source_id = 0
 var grass_source_id = 1
 var rock_source_id = 1
+var gened: Dictionary = {}
+var last_tile = Vector2i(99999,99999)
+var station_spawns = false
 
 func _ready() -> void:
 	$DeathScreen.visible = false
@@ -59,3 +71,46 @@ func _physics_process(_delta: float) -> void:
 	if Player.dead:
 		get_tree().paused = true
 		$DeathScreen.visible = true
+		
+	var player := Player
+	check_station(player)
+	var cell = Vector2i((player.global_position / CELL).floor())
+	if cell == last_tile:
+		return
+	last_tile = cell
+	
+	for x in range(cell.x - GEN_RADIUS, cell.x + GEN_RADIUS + 1):
+		for y in range(cell.y - GEN_RADIUS, cell.y + GEN_RADIUS + 1): #also used claude to egt the range
+			var c = Vector2i(x,y)
+			if gened.has(c):
+				continue
+			gened[c] = true
+			gened_cell(c, player)
+			
+
+func gened_cell(c: Vector2i, player: Node2D):
+	if randi_range(1, 20) == 1:
+		spawn(enemy_one_scene, c, player)
+	if randi_range(1, 40) == 1:
+		spawn(boss_scene, c, player)
+		
+func spawn(scene: PackedScene, c: Vector2i, player: Node2D):
+	if scene == null:
+		return
+	var pos := Vector2(c * CELL) + Vector2(randf() * CELL, randf() * CELL)
+	if pos.distance_to(player.global_position) <= SAFE_DISTANCE:
+		return
+	var node := scene.instantiate() as Node2D
+	print("spawned ", scene.resource_path, " at ", pos)
+	add_child(node)
+	node.global_position = pos
+
+func check_station(x: Node2D):
+	if station_spawns or fuel_scen == null:
+		return
+	if Globals.score <= FUEL_SCORE:
+		return
+	station_spawns = true
+	var station = fuel_scen.instantiate() as Node2D
+	add_child(station)
+	station.global_position = x.global_position + Vector2.from_angle(randf() * TAU) * FUEL_DIST # claude helped me abit with this part

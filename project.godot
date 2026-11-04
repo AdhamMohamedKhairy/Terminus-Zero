@@ -46,6 +46,10 @@ hostile=""
 player_attack=""
 bullet_buff=""
 player=""
+boss=""
+station=""
+normal_enemies=""
+tracked_by_arrow=""
 
 [input]
 

@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+
 @export var health:= 100
 @export var player_velocity:Vector2
 @export var has_shield := false
@@ -31,7 +32,6 @@ const BOOST_MAX_SPEED := 800.0
 
 # Left time for each bit of trail
 var trail_left_times:Array[float]=[]
-
 var dead := false
 var warping := true
 func _ready():
@@ -51,7 +51,7 @@ func _physics_process(delta: float) -> void:
 	# Rotate with left and right, move with up, brake with down
 	rotation += Input.get_axis("left","right") * ROT_SPEED * delta
 	
-	Globals.velocity = abs(velocity)
+	Globals.velocity = velocity.length()
 	var forward_vector := Vector2.UP.rotated(rotation) # Forward motion vector
 	var current_power := THRUST_POWER
 	var speed_cap := MAX_SPEED
@@ -85,7 +85,7 @@ func _physics_process(delta: float) -> void:
 	
 	# Update trail following the spaceship
 	update_trail(forward_vector)
-
+	
 func update_trail(forward_vector:Vector2)->void:
 	# Fetch current time for the new trail
 	var now := Time.get_ticks_msec() / 1000.0
