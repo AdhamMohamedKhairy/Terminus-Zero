@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://7eo6o5j51svi"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_la1ci"]
+load_path = "res://.godot/imported/Speed Up - Booster.png-cd5377ddcba023b394fe7c5afde2f6b6.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_onkbk"]
+atlas = SubResource("CompressedTexture2D_la1ci")
+region = Rect2(153, 58, 30, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_onkbk"]
+size = Vector2(30, 30)
+
+[node name="SpeefBuff" type="Area2D" unique_id=1493096849 groups=["speed_buff"]]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=87201092]
+texture = SubResource("AtlasTexture_onkbk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=17935396]
+shape = SubResource("RectangleShape2D_onkbk")

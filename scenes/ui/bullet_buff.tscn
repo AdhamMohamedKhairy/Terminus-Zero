@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://qr21uwwo5oad"]
+
+[ext_resource type="Texture2D" uid="uid://c2xlhtd77rfuw" path="res://assets/Space Game - Pixel Assets/Player Boosters/Extra Bullet - Bullet.png" id="1_nlp5b"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_onkbk"]
+atlas = ExtResource("1_nlp5b")
+region = Rect2(9, 10, 30, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ad8vj"]
+size = Vector2(30, 30)
+
+[node name="BulletBuff" type="Area2D" unique_id=374542664]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=856033525]
+texture = SubResource("AtlasTexture_onkbk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=237239038]
+shape = SubResource("RectangleShape2D_ad8vj")

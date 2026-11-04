@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://d28s8igeol47y"]
+
+[ext_resource type="Texture2D" uid="uid://dr51umyg02u0b" path="res://assets/Space Game - Pixel Assets/Player Boosters/Shield - Booster.png" id="1_j2du8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_onkbk"]
+atlas = ExtResource("1_j2du8")
+region = Rect2(153, 58, 30, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ad8vj"]
+size = Vector2(30, 30)
+
+[node name="ShieldBuff" type="Area2D" unique_id=147967873]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=421021993]
+texture = SubResource("AtlasTexture_onkbk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1936111789]
+shape = SubResource("RectangleShape2D_ad8vj")
