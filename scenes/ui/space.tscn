@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://d28s8igeol47y" path="res://scenes/ui/shield_buff.tscn" id="7_07aq1"]
 [ext_resource type="PackedScene" uid="uid://bcifottfwitjl" path="res://scenes/ui/death_screen.tscn" id="8_yelc6"]
 [ext_resource type="PackedScene" uid="uid://cebwhqrv2a11p" path="res://scenes/gas_station/gas_station.tscn" id="9_emwyr"]
+[ext_resource type="PackedScene" uid="uid://d0qnyk7kenojs" path="res://scenes/enemies/boss.tscn" id="9_emwyr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yelc6"]
 texture = ExtResource("2_etacg")
@@ -248,3 +249,5 @@ process_mode = 3
 visible = false
 
 [node name="GasStation" parent="." unique_id=439218340 instance=ExtResource("9_emwyr")]
+
+[node name="Boss" parent="." unique_id=228694409 instance=ExtResource("9_emwyr")]

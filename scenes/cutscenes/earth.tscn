@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://dvm0qi555idb8"]
+
+[ext_resource type="Texture2D" uid="uid://dd6yt6cwc1fq" path="res://assets/cozy-space-backdrops/backgrounds/1x/stars-far-tile.png" id="1_kfbbg"]
+[ext_resource type="Script" uid="uid://bx4ivumr6u1ch" path="res://scenes/cutscenes/earth.gd" id="1_rtkvp"]
+[ext_resource type="Texture2D" uid="uid://bdk7oxg2trv52" path="res://assets/cozy-space-backdrops/planets/4x/planet-terran.png" id="2_o74di"]
+[ext_resource type="PackedScene" uid="uid://b5qmlnw8qgv7x" path="res://scenes/entities/player/player.tscn" id="4_atwdq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nfrx5"]
+radius = 310.00162
+
+[sub_resource type="Curve2D" id="Curve2D_rtkvp"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1, 370, 0, 0, 0, 0, 211, 200, 0, 0, 0, 0, 450, 424, 0, 0, 0, 0, 340, 562, 0, 0, 0, 0, 219, 405, 0, 0, 0, 0, 424, 288, 0, 0, 0, 0, 568, 292, 0, 0, 0, 0, 679, 329, 0, 0, 0, 0, 874, 340, 0, 0, 0, 0, 971, 416)
+}
+point_count = 10
+
+[node name="Earth" type="Node2D" unique_id=876006285]
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1353948731]
+repeat_size = Vector2(640, 480)
+repeat_times = 5
+
+[node name="bg" type="TextureRect" parent="Parallax2D" unique_id=1909575812]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 576.0
+offset_bottom = 416.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_kfbbg")
+
+[node name="earth" type="Area2D" parent="." unique_id=222157732]
+position = Vector2(995, 713)
+script = ExtResource("1_rtkvp")
+
+[node name="earth" type="TextureRect" parent="earth" unique_id=1583406383]
+offset_left = -290.0
+offset_top = -312.99997
+offset_right = -98.0
+offset_bottom = -120.99997
+scale = Vector2(3, 3)
+texture = ExtResource("2_o74di")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="earth" unique_id=613008332]
+shape = SubResource("CircleShape2D_nfrx5")
+
+[node name="Path2D" type="Path2D" parent="." unique_id=1966188525]
+curve = SubResource("Curve2D_rtkvp")
+
+[node name="Player" parent="." unique_id=1909375880 node_paths=PackedStringArray("cutscene_path") instance=ExtResource("4_atwdq")]
+position = Vector2(0.99999994, 370.00003)
+scale = Vector2(1.75, 1.75)
+is_cutscene = true
+cutscene_path = NodePath("../Path2D")
+
+[connection signal="area_entered" from="earth" to="earth" method="_on_area_entered"]

@@ -14,6 +14,11 @@ extends CharacterBody2D
 @onready var area:Area2D = $area
 @onready var trail:Line2D = $line
 
+@export var is_cutscene := false
+@export var cutscene_path:Path2D=null
+var bullet_on_cd := false
+var health_50_warning := false
+var health_20_warning := false
 # Bullet constants
 const fire_ball_scene = preload("res://scenes/entities/player/fire_ball.tscn")
 const BULLET_OFFSET = 40.0
@@ -27,23 +32,51 @@ const ROT_SPEED := 3.5 # for circular motion
 const MAX_SPEED := 500.0 # so player doesnt become too fast
 const DRAG := 0.3 # uhhh, claude helped me add it for friction
 const BRAKE_POWER := 400.0 # pressing 'back' force
-const BOOST_POWER := 1200.0
-const BOOST_MAX_SPEED := 800.0
+const BOOST_POWER := 1500.0
+const BOOST_MAX_SPEED := 1200.0
 
 # Left time for each bit of trail
 var trail_left_times:Array[float]=[]
 var dead := false
 var warping := true
 func _ready():
+	Bubble.toggle_buble(self)
+	if is_cutscene:
+		if cutscene_path:
+			sprite.play("boost")
+			
+			var curve = cutscene_path.curve
+			var length = curve.get_baked_length()
+			
+			var tween := create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+			tween.tween_method(func(offset: float):
+				var pos := cutscene_path.to_global(curve.sample_baked(offset))
+				# look slightly ahead on the curve to get the facing direction
+				var ahead := cutscene_path.to_global(curve.sample_baked(minf(offset + 5.0, length)))
+				global_position = pos
+				if ahead != pos:
+					rotation = (ahead - pos).angle() + PI / 2 # sprite faces UP
+			,0.0,length,3.0)
+			
+			await tween.finished
+			Bubble.queue_text(["The Earth? Are you even human?","You were born a human, later turned into a space ship...","You no longer belong to here...","This wasn't your end point....","This is where it all started","Good luck, Spx!"])
+			await get_tree().create_timer(13).timeout
+			sprite.play("die")
+			await sprite.animation_finished
+			await get_tree().create_timer(1.2).timeout
+			queue_free()
+			get_tree().change_scene_to_file("res://scenes/cutscenes/end_credits.tscn")
+		return 
 	# Spawn, then idle
 	sprite.play("warp")
 	await sprite.animation_finished
 	sprite.play("idle")
 	await get_tree().create_timer(1).timeout
-	Bubble.toggle_buble(self)
 	Bubble.queue_text(["Hiiiii","Im Hamza"])
 	warping = false
 func _physics_process(delta: float) -> void:
+	if is_cutscene:
+		return
 	# No motion if dead
 	if dead or warping:
 		return
@@ -70,7 +103,7 @@ func _physics_process(delta: float) -> void:
 		velocity = velocity.move_toward(Vector2.ZERO, BRAKE_POWER*delta)
 	
 	# Shoot fireballs
-	if Input.is_action_just_pressed("shoot"):
+	if Input.is_action_just_pressed("shoot") and not bullet_on_cd:
 		shoot(forward_vector)
 	
 	
@@ -100,6 +133,7 @@ func update_trail(forward_vector:Vector2)->void:
 		trail_left_times.pop_front()
 
 func shoot(forward_vector:Vector2):
+	bullet_on_cd = true
 	var ball := fire_ball_scene.instantiate()
 	
 	# add to parent, instead of player
@@ -108,6 +142,9 @@ func shoot(forward_vector:Vector2):
 	ball.global_position = global_position + forward_vector * BULLET_OFFSET
 	ball.rotation = rotation
 	ball.direction = forward_vector
+	# bullet cooldown of 200ms
+	await get_tree().create_timer(0.15).timeout
+	bullet_on_cd =false
 
 func take_damage(dmg:int):
 	if has_shield:
@@ -123,9 +160,13 @@ func take_damage(dmg:int):
 		sprite.play("die")
 		await sprite.animation_finished
 		queue_free()
-
+	elif health <= 50 and not health_50_warning:
+		Bubble.queue_text(["Your HP has dropped below 50!"])
+		health_50_warning = true
+	elif health <=20 and not health_20_warning:
+		Bubble.queue_text(["CRITICAL...BELOW 20 HP!!!"])
+		health_20_warning = true
 func toggle_shield(state:bool):
-	print("TOGGLED")
 	if state:
 		shield_area.visible = true
 		shield_sprite.play("spawn")
@@ -149,4 +190,4 @@ func _on_area_area_entered(area: Area2D) -> void:
 	elif area.is_in_group("speed_buff"):
 		pass
 	if area.is_in_group("hostile"):
-		take_damage(10)
+		take_damage(area.dmg)
