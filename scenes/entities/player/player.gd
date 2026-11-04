@@ -51,6 +51,7 @@ func _physics_process(delta: float) -> void:
 	# Rotate with left and right, move with up, brake with down
 	rotation += Input.get_axis("left","right") * ROT_SPEED * delta
 	
+	Globals.velocity = abs(velocity)
 	var forward_vector := Vector2.UP.rotated(rotation) # Forward motion vector
 	var current_power := THRUST_POWER
 	var speed_cap := MAX_SPEED
