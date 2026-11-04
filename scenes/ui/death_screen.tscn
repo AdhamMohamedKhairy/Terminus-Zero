@@ -1,0 +1,348 @@
+[gd_scene format=3 uid="uid://bcifottfwitjl"]
+
+[ext_resource type="Script" uid="uid://ci0ipa7oj4pks" path="res://scenes/ui/death_screen.gd" id="1_0bgcs"]
+[ext_resource type="FontFile" uid="uid://cstm0pu8svo1l" path="res://assets/fonts/galacticgrid/GalacticGrid.ttf" id="1_u4p5k"]
+[ext_resource type="Texture2D" uid="uid://b01lmwmv2kwn8" path="res://assets/SpaceRage/Explosions/explosion_1_01.png" id="2_yxsj6"]
+[ext_resource type="Texture2D" uid="uid://d2iblsglkbh3x" path="res://assets/SpaceRage/Explosions/explosion_1_02.png" id="3_o6us7"]
+[ext_resource type="Texture2D" uid="uid://cepc0w11ekud1" path="res://assets/SpaceRage/Explosions/explosion_1_03.png" id="4_uo3v1"]
+[ext_resource type="Texture2D" uid="uid://wk47lq28trae" path="res://assets/SpaceRage/Explosions/explosion_1_04.png" id="5_uay28"]
+[ext_resource type="Texture2D" uid="uid://dsw835pyl83ke" path="res://assets/SpaceRage/Explosions/explosion_1_05.png" id="6_emvem"]
+[ext_resource type="Texture2D" uid="uid://cyq0f1ok6ldwb" path="res://assets/SpaceRage/Explosions/explosion_1_06.png" id="7_qv606"]
+[ext_resource type="Texture2D" uid="uid://cx4tywd3cdic6" path="res://assets/SpaceRage/Explosions/explosion_1_07.png" id="8_wucrh"]
+[ext_resource type="Texture2D" uid="uid://c5ioqx5ba3fik" path="res://assets/SpaceRage/Explosions/explosion_1_08.png" id="9_b3mse"]
+[ext_resource type="Texture2D" uid="uid://cc4ra5uo2d1o3" path="res://assets/SpaceRage/Explosions/explosion_1_09.png" id="10_r6mm0"]
+[ext_resource type="Texture2D" uid="uid://dth615kmxbbuw" path="res://assets/SpaceRage/Explosions/explosion_1_10.png" id="11_13s47"]
+[ext_resource type="Texture2D" uid="uid://dcmoog0075kse" path="res://assets/SpaceRage/Explosions/explosion_1_11.png" id="12_70kh6"]
+[ext_resource type="Texture2D" uid="uid://brto1bljxel5" path="res://assets/SpaceRage/Explosions/explosion_2_01.png" id="13_i80q3"]
+[ext_resource type="Texture2D" uid="uid://jxgk0mp136b3" path="res://assets/SpaceRage/Explosions/explosion_2_02.png" id="14_0bgcs"]
+[ext_resource type="Texture2D" uid="uid://b0krtg28nxjq4" path="res://assets/SpaceRage/Explosions/explosion_2_03.png" id="15_ir4k2"]
+[ext_resource type="Texture2D" uid="uid://bnb6bprpqasjn" path="res://assets/SpaceRage/Explosions/explosion_2_04.png" id="16_k4ffx"]
+[ext_resource type="Texture2D" uid="uid://cvqlb4vcq6guy" path="res://assets/SpaceRage/Explosions/explosion_2_05.png" id="17_s2ii4"]
+[ext_resource type="Texture2D" uid="uid://1si0e5e3xidm" path="res://assets/SpaceRage/Explosions/explosion_2_06.png" id="18_f0ccd"]
+[ext_resource type="Texture2D" uid="uid://c1hi5momamou2" path="res://assets/SpaceRage/Explosions/explosion_2_07.png" id="19_g68bm"]
+[ext_resource type="Texture2D" uid="uid://cw35g02kq0otv" path="res://assets/SpaceRage/Explosions/explosion_2_08.png" id="20_oxjk0"]
+[ext_resource type="Texture2D" uid="uid://cjoigc3o717gw" path="res://assets/SpaceRage/Explosions/explosion_2_09.png" id="21_prk1v"]
+[ext_resource type="Texture2D" uid="uid://bsyah5wvc60q3" path="res://assets/SpaceRage/Explosions/explosion_3_01.png" id="22_6sxu3"]
+[ext_resource type="Texture2D" uid="uid://r1ocu17aqnrw" path="res://assets/SpaceRage/Explosions/explosion_3_02.png" id="23_ocoa7"]
+[ext_resource type="Texture2D" uid="uid://cofirpk0owfit" path="res://assets/SpaceRage/Explosions/explosion_3_03.png" id="24_30qd3"]
+[ext_resource type="Texture2D" uid="uid://ddmxq208tj8cg" path="res://assets/SpaceRage/Explosions/explosion_3_04.png" id="25_dqld1"]
+[ext_resource type="Texture2D" uid="uid://d23leny12j3lu" path="res://assets/SpaceRage/Explosions/explosion_3_05.png" id="26_2fa4i"]
+[ext_resource type="Texture2D" uid="uid://dtbvk4is4d1nm" path="res://assets/SpaceRage/Explosions/explosion_3_06.png" id="27_vfc1o"]
+[ext_resource type="Texture2D" uid="uid://bhedfsvab5sg1" path="res://assets/SpaceRage/Explosions/explosion_3_07.png" id="28_d6f5d"]
+[ext_resource type="Texture2D" uid="uid://e2xiwon86o0" path="res://assets/SpaceRage/Explosions/explosion_3_08.png" id="29_ttfk1"]
+[ext_resource type="Texture2D" uid="uid://dqe7af5xpatxy" path="res://assets/SpaceRage/Explosions/explosion_3_09.png" id="30_cv2fj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_onkbk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_yxsj6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_o6us7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_uo3v1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_uay28")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_emvem")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_qv606")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_wucrh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_b3mse")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_r6mm0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_13s47")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_70kh6")
+}],
+"loop": 0,
+"name": &"animtion_1",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_i80q3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_0bgcs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ir4k2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_k4ffx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_s2ii4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_f0ccd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_g68bm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_oxjk0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_prk1v")
+}],
+"loop": 0,
+"name": &"animtion_2",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_6sxu3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_ocoa7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_30qd3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_dqld1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_2fa4i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_vfc1o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_d6f5d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_ttfk1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_cv2fj")
+}],
+"loop": 0,
+"name": &"animtion_3",
+"speed": 15.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_onkbk"]
+bg_color = Color(0.5990243, 1.1310726e-06, 0.28924996, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 15.0
+expand_margin_top = 15.0
+expand_margin_right = 15.0
+expand_margin_bottom = 15.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k4ffx"]
+bg_color = Color(1, 0.6, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 15.0
+expand_margin_top = 15.0
+expand_margin_right = 15.0
+expand_margin_bottom = 15.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f0ccd"]
+bg_color = Color(1, 0.6, 0.6, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 15.0
+expand_margin_top = 15.0
+expand_margin_right = 15.0
+expand_margin_bottom = 15.0
+
+[node name="DeathScreen" type="CanvasLayer" unique_id=2020768921]
+script = ExtResource("1_0bgcs")
+
+[node name="BG" type="Control" parent="." unique_id=224007851]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="BG" unique_id=839055759]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.078431375, 0.078431375, 0.078431375, 1)
+
+[node name="Title" type="Control" parent="." unique_id=1663875273]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="Title" unique_id=1814256785]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -208.0
+offset_top = 16.0
+offset_right = 208.0
+offset_bottom = 76.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0, 1, 1)
+theme_override_fonts/font = ExtResource("1_u4p5k")
+theme_override_font_sizes/font_size = 64
+text = "Game Over T_T"
+
+[node name="Textures" type="Control" parent="." unique_id=777161682]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Explosion" type="AnimatedSprite2D" parent="Textures" unique_id=1392694949]
+position = Vector2(185, 235)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_onkbk")
+animation = &"animtion_1"
+
+[node name="Explosion2" type="AnimatedSprite2D" parent="Textures" unique_id=1402234564]
+position = Vector2(185, 235)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_onkbk")
+animation = &"animtion_3"
+
+[node name="Explosion3" type="AnimatedSprite2D" parent="Textures" unique_id=1492239282]
+position = Vector2(185, 235)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_onkbk")
+animation = &"animtion_3"
+
+[node name="Explosion4" type="AnimatedSprite2D" parent="Textures" unique_id=1779423498]
+position = Vector2(185, 235)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_onkbk")
+animation = &"animtion_3"
+
+[node name="Explosion5" type="AnimatedSprite2D" parent="Textures" unique_id=2124855388]
+position = Vector2(185, 235)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_onkbk")
+animation = &"animtion_3"
+
+[node name="Explosion6" type="AnimatedSprite2D" parent="Textures" unique_id=2134733847]
+position = Vector2(185, 235)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_onkbk")
+animation = &"animtion_3"
+
+[node name="Explosion7" type="AnimatedSprite2D" parent="Textures" unique_id=1400045113]
+position = Vector2(185, 235)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_onkbk")
+animation = &"animtion_3"
+
+[node name="Explosion8" type="AnimatedSprite2D" parent="Textures" unique_id=2056314855]
+position = Vector2(185, 235)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_onkbk")
+animation = &"animtion_3"
+
+[node name="Explosion9" type="AnimatedSprite2D" parent="Textures" unique_id=1728551569]
+position = Vector2(185, 235)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_onkbk")
+animation = &"animtion_3"
+
+[node name="Explosion10" type="AnimatedSprite2D" parent="Textures" unique_id=1878360387]
+position = Vector2(185, 235)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_onkbk")
+animation = &"animtion_3"
+
+[node name="Buttons" type="Control" parent="." unique_id=1724947446]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Restart" type="Button" parent="Buttons" unique_id=1649741102]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_u4p5k")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_onkbk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_k4ffx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_f0ccd")
+text = "RESTART"
+
+[node name="MainMenu" type="Button" parent="Buttons" unique_id=695485088]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -155.0
+offset_top = 75.0
+offset_right = 155.0
+offset_bottom = 134.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_u4p5k")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_onkbk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_k4ffx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_f0ccd")
+text = "MAIN MENU"
+
+[connection signal="pressed" from="Buttons/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Buttons/MainMenu" to="." method="_on_main_menu_pressed"]
