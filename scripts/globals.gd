@@ -1,5 +1,6 @@
 extends Node
-var shield = 0 #this shoukld range from 0 to 2 @Hazoro
+var has_shield = false
+var shield = 0
 var health: int = 100
 var velocity: float
 var score: int = 0
