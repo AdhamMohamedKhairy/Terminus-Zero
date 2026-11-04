@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://5c36vtwj6qta" path="res://assets/vii/Backgrounds/purple.png" id="4_07aq1"]
 [ext_resource type="PackedScene" uid="uid://cvwekgqbiskty" path="res://scenes/enemies/enemy_one.tscn" id="4_upnq1"]
 [ext_resource type="PackedScene" uid="uid://b5qmlnw8qgv7x" path="res://scenes/entities/player/player.tscn" id="6_etacg"]
+[ext_resource type="PackedScene" uid="uid://d28s8igeol47y" path="res://scenes/ui/shield_buff.tscn" id="7_07aq1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yelc6"]
 texture = ExtResource("2_etacg")
@@ -236,3 +237,6 @@ layer_1/z_index = 1
 
 [node name="Player" parent="." unique_id=1909375880 instance=ExtResource("6_etacg")]
 position = Vector2(281, 1)
+
+[node name="ShieldBuff" parent="." unique_id=147967873 instance=ExtResource("7_07aq1")]
+position = Vector2(247, -42)

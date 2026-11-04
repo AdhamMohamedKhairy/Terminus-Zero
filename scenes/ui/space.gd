@@ -56,4 +56,4 @@ func _physics_process(_delta: float) -> void:
 		load_chunk(world_size_start.x, world_size_start.y + 1)
 	elif player_position_negative.y < world_size_start.y:
 		load_chunk(world_size_start.x, world_size_start.y - 1)
-	print("PLayer :", Player.global_position)
+	print(Player.global_position)

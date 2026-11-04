@@ -44,6 +44,7 @@ speed_buff=""
 shield_buff=""
 hostile=""
 player_attack=""
+bullet_buff=""
 
 [input]
 
