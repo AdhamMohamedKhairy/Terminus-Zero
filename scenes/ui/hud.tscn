@@ -2,10 +2,14 @@
 
 [ext_resource type="Texture2D" uid="uid://bh5c5kekrr07q" path="res://assets/AboEl5yr/boost.png" id="1_136eg"]
 [ext_resource type="Script" uid="uid://boerwfsjrc5yc" path="res://scenes/ui/hud.gd" id="1_oj5la"]
-[ext_resource type="Texture2D" uid="uid://bjvqmulfxh4sq" path="res://assets/AboEl5yr/pixil-frame-0.png" id="2_oj5la"]
 [ext_resource type="Texture2D" uid="uid://cmtcotmw0qj8v" path="res://assets/AboEl5yr/jerrycan.png" id="3_gss2c"]
 [ext_resource type="Texture2D" uid="uid://uhs57o5mxkrp" path="res://assets/AboEl5yr/drumstick.png" id="4_h022r"]
 [ext_resource type="FontFile" uid="uid://cstm0pu8svo1l" path="res://assets/fonts/galacticgrid/GalacticGrid.ttf" id="5_4jqwt"]
+[ext_resource type="Texture2D" uid="uid://ddhhroykoeu7" path="res://assets/AboEl5yr/health_bg.png" id="6_4jqwt"]
+[ext_resource type="Texture2D" uid="uid://5wcyxodlvhlt" path="res://assets/AboEl5yr/health_prog.png" id="7_kicr4"]
+[ext_resource type="Texture2D" uid="uid://d2yx5nfphxrto" path="res://assets/AboEl5yr/sheild.png" id="8_mj13f"]
+[ext_resource type="Texture2D" uid="uid://d1ww3elw0cyjt" path="res://assets/AboEl5yr/shield_prog.png" id="9_0h1do"]
+[ext_resource type="Texture2D" uid="uid://c5do30yhtm82q" path="res://assets/AboEl5yr/arrow.png" id="10_kicr4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kicr4"]
 atlas = ExtResource("1_136eg")
@@ -40,54 +44,6 @@ animations = [{
 }],
 "loop": 1,
 "name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_erw67"]
-atlas = ExtResource("2_oj5la")
-region = Rect2(0, 448, 128, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gonto"]
-atlas = ExtResource("2_oj5la")
-region = Rect2(0, 320, 128, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cwdlq"]
-atlas = ExtResource("2_oj5la")
-region = Rect2(0, 0, 128, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_o6xly"]
-atlas = ExtResource("2_oj5la")
-region = Rect2(0, 384, 128, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_we3sy"]
-atlas = ExtResource("2_oj5la")
-region = Rect2(0, 448, 128, 64)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_s7rlf"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_erw67")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gonto")
-}],
-"loop": 1,
-"name": &"default",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cwdlq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_o6xly")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_we3sy")
-}],
-"loop": 1,
-"name": &"shield",
 "speed": 5.0
 }]
 
@@ -129,7 +85,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4mi7y")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"default",
 "speed": 5.0
 }]
@@ -144,21 +100,16 @@ grow_vertical = 2
 script = ExtResource("1_oj5la")
 
 [node name="Boost" type="AnimatedSprite2D" parent="." unique_id=1579150876]
-position = Vector2(67.000015, 589)
-scale = Vector2(1.921875, 1.921875)
+position = Vector2(96.75001, 529.5)
+scale = Vector2(2.8515623, 2.8515623)
 sprite_frames = SubResource("SpriteFrames_s7wsd")
-
-[node name="HealthBar" type="AnimatedSprite2D" parent="." unique_id=1280736429]
-position = Vector2(187, 93)
-scale = Vector2(2.734375, 2.375)
-sprite_frames = SubResource("SpriteFrames_s7rlf")
 
 [node name="Gas" type="AnimatedSprite2D" parent="." unique_id=1755097031]
 position = Vector2(1120.25, 562.25)
 scale = Vector2(2.1757813, 2.1757813)
 sprite_frames = SubResource("SpriteFrames_0cvp5")
-frame = 2
-frame_progress = 0.10397514
+frame = 4
+frame_progress = 1.0
 
 [node name="Drumstick" type="Sprite2D" parent="." unique_id=1328659516]
 position = Vector2(937, 63)
@@ -172,6 +123,56 @@ offset_right = 1195.0
 offset_bottom = 91.0
 theme_override_fonts/font = ExtResource("5_4jqwt")
 theme_override_font_sizes/font_size = 48
-text = " X Dwumsitx"
+text = "X Dwumsitx"
 horizontal_alignment = 2
 vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="." unique_id=85157170]
+layout_mode = 0
+offset_left = 1015.0
+offset_top = 433.0
+offset_right = 1219.0
+offset_bottom = 496.0
+theme_override_fonts/font = ExtResource("5_4jqwt")
+theme_override_font_sizes/font_size = 48
+text = "1000/1000"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="." unique_id=1966933075]
+layout_mode = 0
+offset_left = 352.0
+offset_top = 41.0
+offset_right = 556.0
+offset_bottom = 104.0
+theme_override_fonts/font = ExtResource("5_4jqwt")
+theme_override_font_sizes/font_size = 48
+text = "100Hp"
+vertical_alignment = 1
+
+[node name="HealthBar" type="TextureProgressBar" parent="." unique_id=1030096377]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 10.0
+offset_right = 144.0
+offset_bottom = 74.0
+scale = Vector2(2.6507773, 2.6507773)
+value = 100.0
+texture_under = ExtResource("6_4jqwt")
+texture_progress = ExtResource("7_kicr4")
+
+[node name="ShieldBar" type="TextureProgressBar" parent="." unique_id=313572800]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 10.0
+offset_right = 144.0
+offset_bottom = 74.0
+scale = Vector2(2.6507773, 2.6507773)
+max_value = 2.0
+texture_under = ExtResource("8_mj13f")
+texture_progress = ExtResource("9_0h1do")
+
+[node name="Arrow" type="Sprite2D" parent="." unique_id=296828714]
+position = Vector2(1118, 278)
+scale = Vector2(2.0059907, 2.0059907)
+texture = ExtResource("10_kicr4")
