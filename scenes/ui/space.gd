@@ -7,7 +7,7 @@ const FUEL_SCORE := 30
 const FUEL_DIST := 4000
 
 @export var enemy_one_scene: PackedScene = load("res://scenes/enemies/enemy_one.tscn")
-@export var boss_scene: PackedScene
+@export var boss_scene: PackedScene = load("res://scenes/enemies/boss.tscn")
 @export var fuel_scen: PackedScene = load("res://scenes/gas_station/gas_station.tscn")
 @onready var tile_map: TileMap = $TileMap
 @onready var camera: Camera2D = $Camera
