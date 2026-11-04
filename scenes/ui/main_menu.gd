@@ -9,4 +9,13 @@ func _on_meteor_timer_timeout() -> void:
 
 
 func _on_texture_button_pressed() -> void:
-	print("one one")
+	#The start button
+	get_tree().change_scene_to_file("res://scenes/ui/pause.tscn")
+
+
+func _on_texture_button_2_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/Main Menu/settings.tscn")
+
+func _on_texture_button_3_pressed() -> void:
+	#the modes button
+	pass

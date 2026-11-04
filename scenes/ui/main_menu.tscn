@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://blljewk0a8rcq" path="res://assets/cozy-space-backdrops/planets/4x/planet-gasblue.png" id="10_7suek"]
 [ext_resource type="FontFile" uid="uid://chf0a3hhnyw78" path="res://assets/fonts/pixel-space-free-personal-use/Pixel Space - Personal Use.ttf" id="10_8g5eo"]
 [ext_resource type="Script" uid="uid://8b0wnkfq38bn" path="res://scenes/ui/texture_button_3.gd" id="11_otr3d"]
+[ext_resource type="FontFile" uid="uid://cstm0pu8svo1l" path="res://assets/fonts/galacticgrid/GalacticGrid.ttf" id="13_8ekit"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6oxtn"]
 atlas = ExtResource("8_q85j6")
@@ -755,6 +756,10 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
+[node name="MeteorTimer" type="Timer" parent="." unique_id=1694501920]
+wait_time = 0.75
+autostart = true
+
 [node name="Labels" type="Control" parent="." unique_id=1318743982]
 layout_mode = 3
 anchors_preset = 15
@@ -779,9 +784,38 @@ theme_override_font_sizes/font_size = 80
 text = "Terminus-Zero"
 horizontal_alignment = 1
 
-[node name="MeteorTimer" type="Timer" parent="." unique_id=1694501920]
-wait_time = 0.75
-autostart = true
+[node name="Label2" type="Label" parent="Labels" unique_id=86431778]
+layout_mode = 0
+offset_left = 572.0
+offset_top = 516.0
+offset_right = 713.0
+offset_bottom = 561.0
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_fonts/font = ExtResource("13_8ekit")
+theme_override_font_sizes/font_size = 48
+text = "START"
+
+[node name="Label3" type="Label" parent="Labels" unique_id=351687669]
+layout_mode = 0
+offset_left = 58.0
+offset_top = 18.0
+offset_right = 265.0
+offset_bottom = 63.0
+theme_override_colors/font_color = Color(0.8666667, 0, 0, 1)
+theme_override_fonts/font = ExtResource("13_8ekit")
+theme_override_font_sizes/font_size = 48
+text = "SETTINGS"
+
+[node name="Label4" type="Label" parent="Labels" unique_id=824548836]
+layout_mode = 0
+offset_left = 1083.0
+offset_top = 436.0
+offset_right = 1290.0
+offset_bottom = 481.0
+theme_override_colors/font_color = Color(0.9518779, 0.8569096, 0, 1)
+theme_override_fonts/font = ExtResource("13_8ekit")
+theme_override_font_sizes/font_size = 48
+text = "MODES"
 
 [node name="MovingButtons" type="Control" parent="." unique_id=685970603]
 layout_mode = 3
@@ -809,6 +843,7 @@ script = ExtResource("9_q85j6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MovingButtons/TextureButton" unique_id=1272834552]
 position = Vector2(92, 93)
+scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_2emqb")
 animation = &"hover"
 
@@ -845,3 +880,5 @@ animation = &"hover"
 
 [connection signal="timeout" from="MeteorTimer" to="." method="_on_meteor_timer_timeout"]
 [connection signal="pressed" from="MovingButtons/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="MovingButtons/TextureButton2" to="." method="_on_texture_button_2_pressed"]
+[connection signal="pressed" from="MovingButtons/TextureButton3" to="." method="_on_texture_button_3_pressed"]

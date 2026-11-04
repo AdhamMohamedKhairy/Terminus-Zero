@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cvwekgqbiskty" path="res://scenes/enemies/enemy_one.tscn" id="4_upnq1"]
 [ext_resource type="PackedScene" uid="uid://b5qmlnw8qgv7x" path="res://scenes/entities/player/player.tscn" id="6_etacg"]
 [ext_resource type="PackedScene" uid="uid://d28s8igeol47y" path="res://scenes/ui/shield_buff.tscn" id="7_07aq1"]
+[ext_resource type="PackedScene" uid="uid://bcifottfwitjl" path="res://scenes/ui/death_screen.tscn" id="8_yelc6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yelc6"]
 texture = ExtResource("2_etacg")
@@ -240,3 +241,7 @@ position = Vector2(281, 1)
 
 [node name="ShieldBuff" parent="." unique_id=147967873 instance=ExtResource("7_07aq1")]
 position = Vector2(247, -42)
+
+[node name="DeathScreen" parent="." unique_id=2020768921 instance=ExtResource("8_yelc6")]
+process_mode = 3
+visible = false
