@@ -4,7 +4,12 @@ var shield = 0
 var health: int = 100
 var velocity: float
 var score: int = 0
-var fuel: int = 1000
+var fuel: float = 1000.0:
+	set(value):
+		if value < fuel:
+			print("fuel ", fuel, " -> ", value)
+			print_stack()
+		fuel = value
 var boosts: int = 0 #this shoukld range from 0 to 3 @Hazoro
 signal out_of_fuel #if this is emmited, make the trail disappear and spx would go 3x slower
 signal green_blob

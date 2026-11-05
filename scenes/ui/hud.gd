@@ -7,33 +7,46 @@ extends Control
 @onready var fuel: Label = $Label2
 @onready var hp: Label = $Label3
 @onready var arrow: Sprite2D = $Arrow
+@export var fuel_burn_rate := 1.0
 
 func _ready() -> void:
 	score.text = str(Globals.score) + " dwumstix"
 	fuel.text = str(Globals.fuel) + "/1000"
 	hp.text = str(Globals.health) + "HP"
-	health.value = Globals.health
 	if Globals.has_shield == true:
 		shield.value = 1
 	else:
 		shield.value = 0
-	health.animation = "default"
 	gas.frame = 4
 	boost.frame = Globals.boosts
 	gas.stop()
-	health.stop()
 	boost.stop()
 
+func _physics_process(delta: float) -> void:
+	if Input.is_action_pressed("up"):
+		var burn := fuel_burn_rate
+		Globals.fuel = max(Globals.fuel - burn * delta, 0.0)
+
 func _process(delta: float) -> void:
-	if Globals.velocity != 0:
-		Globals.fuel -= Globals.velocity * 0.01
 	if Globals.fuel <= 0:
 		Globals.out_of_fuel.emit()
-		gas.frame = 4
 	if Globals.shield == 0:
 		Globals.has_shield = false
+
+	update_display()
+	gas_frame_change()
+	update_arrow()
+
+func update_display() -> void:
+	score.text = str(Globals.score) + " dwumstix"
+	fuel.text = str(int(Globals.fuel)) + "/1000"
+	hp.text = str(Globals.health) + "HP"
+	health.value = Globals.health
+	shield.value = 1 if Globals.has_shield else 0
+	boost.frame = Globals.boosts
 	gas_frame_change()
 	
+func update_arrow():
 	var player := get_tree().get_first_node_in_group("player") as Node2D
 	if player == null:
 		arrow.hide()
@@ -61,11 +74,13 @@ func _process(delta: float) -> void:
 	arrow.rotation = dir.angle() + PI/2
 	
 func gas_frame_change():
-	if Globals.fuel >= 7500:
+	if Globals.fuel >= 750:
 		gas.frame = 4
-	elif Globals.fuel >= 5000:
+	elif Globals.fuel >= 500:
 		gas.frame = 3
-	elif Globals.fuel >= 2500:
+	elif Globals.fuel >= 250:
 		gas.frame = 2
-	elif Globals.fuel == 0:
-		gas.fuel = 1
+	elif Globals.fuel > 0:
+		gas.frame = 1
+	else:
+		gas.frame = 0

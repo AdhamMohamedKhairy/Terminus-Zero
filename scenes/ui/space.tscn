@@ -242,6 +242,10 @@ layer_1/z_index = 1
 [node name="Player" parent="." unique_id=1909375880 instance=ExtResource("6_etacg")]
 position = Vector2(281, 1)
 
+[node name="CanvasLayer" type="CanvasLayer" parent="Player" unique_id=1761709640]
+
+[node name="Hud" parent="Player/CanvasLayer" unique_id=2005371004 instance=ExtResource("5_ruc6h")]
+
 [node name="ShieldBuff" parent="." unique_id=147967873 instance=ExtResource("7_07aq1")]
 position = Vector2(247, -42)
 
@@ -253,5 +257,3 @@ visible = false
 
 [node name="GasStation" parent="." unique_id=439218340 instance=ExtResource("10_3wbk2")]
 position = Vector2(1889, -2056)
-
-[node name="Hud" parent="." unique_id=2005371004 instance=ExtResource("5_ruc6h")]
