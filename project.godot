@@ -58,6 +58,10 @@ station=""
 normal_enemies=""
 tracked_by_arrow=""
 
+[gui]
+
+theme/custom_font="uid://dpw0a4uab2rbv"
+
 [input]
 
 up={

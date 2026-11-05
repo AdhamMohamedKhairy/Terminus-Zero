@@ -5,10 +5,12 @@
 [ext_resource type="Texture2D" uid="uid://dxpsl2nfsuh5p" path="res://assets/vii/Backgrounds/darkPurple.png" id="2_etacg"]
 [ext_resource type="Texture2D" uid="uid://5c36vtwj6qta" path="res://assets/vii/Backgrounds/purple.png" id="4_07aq1"]
 [ext_resource type="PackedScene" uid="uid://cvwekgqbiskty" path="res://scenes/enemies/enemy_one.tscn" id="4_upnq1"]
+[ext_resource type="PackedScene" uid="uid://be71ao7mkd4b0" path="res://scenes/ui/hud.tscn" id="5_ruc6h"]
 [ext_resource type="PackedScene" uid="uid://b5qmlnw8qgv7x" path="res://scenes/entities/player/player.tscn" id="6_etacg"]
 [ext_resource type="PackedScene" uid="uid://d28s8igeol47y" path="res://scenes/ui/shield_buff.tscn" id="7_07aq1"]
 [ext_resource type="PackedScene" uid="uid://bcifottfwitjl" path="res://scenes/ui/death_screen.tscn" id="8_yelc6"]
 [ext_resource type="PackedScene" uid="uid://d0qnyk7kenojs" path="res://scenes/enemies/boss.tscn" id="9_emwyr"]
+[ext_resource type="PackedScene" uid="uid://cebwhqrv2a11p" path="res://scenes/gas_station/gas_station.tscn" id="10_3wbk2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yelc6"]
 texture = ExtResource("2_etacg")
@@ -247,6 +249,9 @@ position = Vector2(247, -42)
 process_mode = 3
 visible = false
 
-[node name="GasStation" parent="." unique_id=439218340 instance=ExtResource("9_emwyr")]
-
 [node name="Boss" parent="." unique_id=228694409 instance=ExtResource("9_emwyr")]
+
+[node name="GasStation" parent="." unique_id=439218340 instance=ExtResource("10_3wbk2")]
+position = Vector2(1889, -2056)
+
+[node name="Hud" parent="." unique_id=2005371004 instance=ExtResource("5_ruc6h")]

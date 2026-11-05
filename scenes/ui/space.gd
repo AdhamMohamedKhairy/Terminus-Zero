@@ -89,9 +89,9 @@ func _physics_process(_delta: float) -> void:
 			
 
 func gened_cell(c: Vector2i, player: Node2D):
-	if randi_range(1, 20) == 1:
+	if randi_range(1, 60) == 1:
 		spawn(enemy_one_scene, c, player)
-	if randi_range(1, 40) == 1:
+	if randi_range(1, 120) == 1:
 		spawn(boss_scene, c, player)
 		
 func spawn(scene: PackedScene, c: Vector2i, player: Node2D):

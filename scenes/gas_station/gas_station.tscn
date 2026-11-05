@@ -1,9 +1,16 @@
 [gd_scene format=3 uid="uid://cebwhqrv2a11p"]
 
 [ext_resource type="Texture2D" uid="uid://cm3rieqc4r2cq" path="res://assets/vii/gas_station.png" id="1_0k84q"]
+[ext_resource type="Script" uid="uid://dyuybqbmbv438" path="res://scenes/gas_station/refueling_area.gd" id="2_d4d1j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_onkbk"]
 size = Vector2(93, 35)
+
+[sub_resource type="Curve2D" id="Curve2D_d1xxy"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 34, 36, 0, 0, 0, 0, 112, 0, 0, 0, 0, 0, 173, 41, 0, 0, 0, 0, 324, 36, 0, 0, 0, 0, 458, 7, 0, 0, 0, 0, 666, 96, 0, 0, 0, 0, 923, 25, 0, 0, 0, 0, 1126, 134, 0, 0, 0, 0, 1305, 42, 0, 0, 0, 0, 1593, 176)
+}
+point_count = 10
 
 [node name="GasStation" type="StaticBody2D" unique_id=439218340]
 
@@ -21,7 +28,20 @@ offset_bottom = 56.0
 color = Color(0.37413925, 0.37413928, 0.37413922, 1)
 
 [node name="RefuelingArea" type="Area2D" parent="." unique_id=1409038159]
+script = ExtResource("2_d4d1j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RefuelingArea" unique_id=1278924752]
 position = Vector2(15.5, 38.5)
 shape = SubResource("RectangleShape2D_onkbk")
+
+[node name="Label" type="Label" parent="RefuelingArea" unique_id=405563572]
+offset_left = -29.0
+offset_top = 25.0
+offset_right = 57.0
+offset_bottom = 48.0
+text = "PARK HERE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Path2D" type="Path2D" parent="." unique_id=1441066985]
+curve = SubResource("Curve2D_d1xxy")

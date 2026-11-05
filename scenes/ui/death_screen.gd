@@ -45,9 +45,6 @@ func set_random_position(sprite: AnimatedSprite2D, index: int) -> void:
 		randf_range(cell_min.y, cell_max.y)
 	)
 
-func _on_restart_pressed() -> void:
-	pass
-
 func _on_main_menu_pressed() -> void:
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://scenes/ui/main_menu.tscn")
