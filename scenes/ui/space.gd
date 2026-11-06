@@ -71,6 +71,7 @@ func _physics_process(_delta: float) -> void:
 	if Player.dead:
 		get_tree().paused = true
 		$DeathScreen.visible = true
+		$CanvasLayer.visible = false
 		
 	var player := Player
 	check_station(player)
