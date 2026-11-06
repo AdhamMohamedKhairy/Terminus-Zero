@@ -12,7 +12,7 @@ extends CharacterBody2D
 @export var ROT_SPEED : float = 10.0
 @export var BRAKE_DISTANCE : float = 150.0
 @export var STOP_DISTANCE : float = 60.0
-const SHOT_COOLDOWN := 10000
+const SHOT_COOLDOWN := 700
 var shot_time = null
 var should_chase : bool = false
 
@@ -33,13 +33,20 @@ func _physics_process(delta: float) -> void:
 			velocity = velocity.move_toward(Vector2.ZERO, THRUST_POWER * delta)
 		velocity = velocity.move_toward(Vector2.ZERO, DRAG * velocity.length() * delta)
 		velocity = velocity.limit_length(MAX_SPEED)
-		move_and_slide()
 		texture_progress_bar.value = health
 		if health <= 0:
-			animated_sprite_2d.play("death")
-			await animated_sprite_2d.animation_finished
-			Globals.score += 2
-			queue_free()
+			die()
+			return
+		if should_chase:
+			move_and_slide()
+
+func die():
+	set_physics_process(false)
+	should_chase = false
+	animated_sprite_2d.play("death")
+	await animated_sprite_2d.animation_finished
+	Globals.score += 2
+	queue_free()
 
 func _on_enter_area_body_entered(body: Node2D) -> void:
 	if body == player_node:
@@ -47,8 +54,7 @@ func _on_enter_area_body_entered(body: Node2D) -> void:
 
 func _on_bullet_timer_timeout() -> void:
 	if should_chase == true:
-		if shot_time == null or shot_time>=SHOT_COOLDOWN:
-			print("SHOT")
+		if shot_time == null or Time.get_ticks_msec() - shot_time>=SHOT_COOLDOWN:
 			var direction = (player_node.global_position - global_position).normalized()
 			var bullet = bullet_scene.instantiate()
 			$"../EnemyBullets".add_child(bullet)

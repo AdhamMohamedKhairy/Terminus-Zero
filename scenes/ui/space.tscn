@@ -224,6 +224,8 @@ sources/2 = SubResource("TileSetAtlasSource_emwyr")
 
 [node name="Space" type="Node2D" unique_id=913350000]
 script = ExtResource("1_giw73")
+gas_scene = ExtResource("10_3wbk2")
+enemy_one_scene = ExtResource("4_upnq1")
 
 [node name="TileMap" type="TileMap" parent="." unique_id=1355901949]
 tile_set = SubResource("TileSet_onkbk")
@@ -250,9 +252,6 @@ process_mode = 3
 visible = false
 
 [node name="Boss" parent="." unique_id=228694409 instance=ExtResource("9_emwyr")]
-
-[node name="GasStation" parent="." unique_id=439218340 instance=ExtResource("10_3wbk2")]
-position = Vector2(1889, -2056)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=578106672]
 

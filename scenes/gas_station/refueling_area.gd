@@ -6,8 +6,6 @@ func _ready():
 
 func _on_body_entered(body:Node2D):
 	if body.is_in_group("player"):
-		body.is_cutscene = true
-		body.custscene_path = $"../Path2D"
 		await get_tree().create_timer(4).timeout
 		
 		var canvas := CanvasLayer.new()

@@ -75,6 +75,8 @@ func _ready():
 	Bubble.queue_text(["Hm?","I must get to Earth ASAP"])
 	warping = false
 func _physics_process(delta: float) -> void:
+	if Input.is_action_just_pressed("cheat"):
+		health = 99999
 	if is_cutscene:
 		return
 	# No motion if dead
@@ -146,9 +148,7 @@ func shoot(forward_vector:Vector2):
 	bullet_on_cd =false
 
 func take_damage(dmg:int):
-	print("TOOK DMG ",dmg)
 	if has_shield:
-		print("SHIELD BLOCKED")
 		toggle_shield(false)
 		return
 	if dead:

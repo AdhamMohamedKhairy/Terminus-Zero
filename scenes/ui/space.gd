@@ -5,15 +5,15 @@ const GEN_RADIUS := 3
 const SAFE_DISTANCE := 500.0
 const FUEL_SCORE := 30
 const FUEL_DIST := 4000
-
+@export var gas_scene: PackedScene
 @export var enemy_one_scene: PackedScene = load("res://scenes/enemies/enemy_one.tscn")
 @export var boss_scene: PackedScene = load("res://scenes/enemies/boss.tscn")
-@export var fuel_scen: PackedScene = load("res://scenes/gas_station/gas_station.tscn")
 @onready var tile_map: TileMap = $TileMap
 @onready var camera: Camera2D = $Camera
 @onready var Player: CharacterBody2D = $Player
 @onready var enemy_one: CharacterBody2D = $EnemyOne
 
+var gas_spawned := false
 var tile_size = 32
 var chunk_size = 100
 var view_distance = 16
@@ -54,6 +54,12 @@ func load_chunk(x, y) -> void:
 				tile_map.set_cell(0, current_tile_position, source_id, Vector2i(0, 0))
 
 func _physics_process(_delta: float) -> void:
+	if not gas_spawned:
+		if Globals.won:
+			var copy = gas_scene.instantiate()
+			copy.global_position = Globals.player.global_position + Vector2(100,100)
+			add_child(copy)
+			gas_spawned = true
 	camera.position = Player.position
 	var world_size = tile_map.get_used_rect() as Rect2i
 	var world_size_start = world_size.position
@@ -74,7 +80,7 @@ func _physics_process(_delta: float) -> void:
 		$CanvasLayer.visible = false
 		
 	var player := Player
-	check_station(player)
+	#check_station(player)
 	var cell = Vector2i((player.global_position / CELL).floor())
 	if cell == last_tile:
 		return
@@ -90,7 +96,7 @@ func _physics_process(_delta: float) -> void:
 			
 
 func gened_cell(c: Vector2i, player: Node2D):
-	if randi_range(1, 60) == 1:
+	if randi_range(1, 35) == 1:
 		spawn(enemy_one_scene, c, player)
 	if randi_range(1, 120) == 1:
 		spawn(boss_scene, c, player)
@@ -106,12 +112,12 @@ func spawn(scene: PackedScene, c: Vector2i, player: Node2D):
 	add_child(node)
 	node.global_position = pos
 
-func check_station(x: Node2D):
-	if station_spawns or fuel_scen == null:
-		return
-	if Globals.score <= FUEL_SCORE:
-		return
-	station_spawns = true
-	var station = fuel_scen.instantiate() as Node2D
-	add_child(station)
-	station.global_position = x.global_position + Vector2.from_angle(randf() * TAU) * FUEL_DIST # claude helped me abit with this part
+#func check_station(x: Node2D):
+	#if station_spawns or fuel_scen == null:
+		#return
+	#if Globals.score <= FUEL_SCORE:
+		#return
+	#station_spawns = true
+	#var station = fuel_scen.instantiate() as Node2D
+	#add_child(station)
+	#station.global_position = x.global_position + Vector2.from_angle(randf() * TAU) * FUEL_DIST # claude helped me abit with this part
