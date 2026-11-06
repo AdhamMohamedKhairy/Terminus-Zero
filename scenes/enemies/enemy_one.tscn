@@ -68,7 +68,7 @@ animations = [{
 size = Vector2(29, 50)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ad8vj"]
-radius = 200.0
+radius = 361.49966
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gddjn"]
 atlas = ExtResource("3_xyp2f")
@@ -103,7 +103,6 @@ rotation = 1.5707964
 shape = SubResource("RectangleShape2D_ad8vj")
 
 [node name="EnterArea" type="Area2D" parent="." unique_id=1995774781]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnterArea" unique_id=807061616]
 shape = SubResource("CircleShape2D_ad8vj")
@@ -116,7 +115,6 @@ autostart = true
 position = Vector2(36, 0)
 
 [node name="HitArea" type="Area2D" parent="." unique_id=220904363]
-visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HitArea" unique_id=49869541]
 polygon = PackedVector2Array(-7, 23, -1, 16, 6, 15, 9, 10, 26, 3, 28, 1, 28, -3, 26, -5, 9, -13, 6, -18, -1, -19, -6, -25, -15, -23, -14, -17, -22, -12, -20, -6, -20, 3, -22, 9, -14, 15, -15, 20)

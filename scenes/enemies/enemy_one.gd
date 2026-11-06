@@ -11,8 +11,8 @@ extends CharacterBody2D
 @export var DRAG : float = 0.9
 @export var ROT_SPEED : float = 10.0
 @export var BRAKE_DISTANCE : float = 150.0
-@export var STOP_DISTANCE : float = 400.0
-const SHOT_COOLDOWN := 150
+@export var STOP_DISTANCE : float = 60.0
+const SHOT_COOLDOWN := 10000
 var shot_time = null
 var should_chase : bool = false
 
@@ -38,6 +38,7 @@ func _physics_process(delta: float) -> void:
 		if health <= 0:
 			animated_sprite_2d.play("death")
 			await animated_sprite_2d.animation_finished
+			Globals.score += 2
 			queue_free()
 
 func _on_enter_area_body_entered(body: Node2D) -> void:
@@ -47,13 +48,14 @@ func _on_enter_area_body_entered(body: Node2D) -> void:
 func _on_bullet_timer_timeout() -> void:
 	if should_chase == true:
 		if shot_time == null or shot_time>=SHOT_COOLDOWN:
+			print("SHOT")
 			var direction = (player_node.global_position - global_position).normalized()
 			var bullet = bullet_scene.instantiate()
 			$"../EnemyBullets".add_child(bullet)
 			bullet.global_position = $Marker2D.global_position
 			bullet.rotation = direction.angle() + PI / 2
 			bullet.direction = direction
-		shot_time = Time.get_ticks_msec()
+			shot_time = Time.get_ticks_msec()
 func _on_hit_area_area_entered(area: Area2D) -> void:
 	if area.is_in_group("player_attack"):
 		health -= 15
