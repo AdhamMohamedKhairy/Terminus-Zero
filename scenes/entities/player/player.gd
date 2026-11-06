@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-@export var health:= 100
+@export var health:= 200
 @export var player_velocity:Vector2
 @export var has_shield := false
 
@@ -72,7 +72,7 @@ func _ready():
 	await sprite.animation_finished
 	sprite.play("idle")
 	await get_tree().create_timer(1).timeout
-	Bubble.queue_text(["Hiiiii","Im Hamza"])
+	Bubble.queue_text(["Hm?","I must get to Earth ASAP"])
 	warping = false
 func _physics_process(delta: float) -> void:
 	if is_cutscene:
@@ -113,7 +113,6 @@ func _physics_process(delta: float) -> void:
 	
 	# Export velocity for other usages
 	player_velocity = velocity
-	toggle_shield(has_shield)
 	move_and_slide()
 	
 	# Update trail following the spaceship
@@ -147,12 +146,15 @@ func shoot(forward_vector:Vector2):
 	bullet_on_cd =false
 
 func take_damage(dmg:int):
+	print("TOOK DMG ",dmg)
 	if has_shield:
+		print("SHIELD BLOCKED")
 		toggle_shield(false)
 		return
 	if dead:
 		return
 	health-=dmg
+	Globals.health = health
 	if health <= 0:
 		velocity = Vector2.ZERO
 		collision.set_deferred("disabled",true)
@@ -161,29 +163,27 @@ func take_damage(dmg:int):
 		await sprite.animation_finished
 		queue_free()
 	elif health <= 50 and not health_50_warning:
-		Bubble.queue_text(["Your HP has dropped below 50!"])
+		Bubble.queue_text(["50 HP!"])
 		health_50_warning = true
 	elif health <=20 and not health_20_warning:
-		Bubble.queue_text(["CRITICAL...BELOW 20 HP!!!"])
+		Bubble.queue_text(["CRITICAL...20 HP!!!"])
 		health_20_warning = true
 func toggle_shield(state:bool):
+	has_shield = state
 	if state:
 		shield_area.visible = true
 		shield_sprite.play("spawn")
 		await sprite.animation_finished
 		shield_collision.set_deferred("disabled",false)
 		shield_sprite.play("idle")
-		has_shield = true
 	else:
 		shield_sprite.play("explode")
 		await shield_sprite.animation_finished
 		shield_collision.set_deferred("disabled",true)
 		shield_area.visible = false
-		has_shield = false
-
 func _on_area_area_entered(area: Area2D) -> void:
 	if area.is_in_group("shield_buff"):
-		has_shield = true
+		toggle_shield(true)
 		area.queue_free()
 	elif area.is_in_group("bullet_buff"):
 		pass

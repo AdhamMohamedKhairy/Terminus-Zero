@@ -441,7 +441,7 @@ script = ExtResource("1_1lgw8")
 
 [node name="sprite" type="AnimatedSprite2D" parent="." unique_id=1549663275]
 sprite_frames = SubResource("SpriteFrames_0qees")
-animation = &"warp"
+animation = &"die"
 autoplay = "idle"
 
 [node name="collision" type="CollisionShape2D" parent="." unique_id=1015923296]
