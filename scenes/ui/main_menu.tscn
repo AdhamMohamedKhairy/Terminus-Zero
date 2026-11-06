@@ -808,14 +808,14 @@ text = "SETTINGS"
 
 [node name="Label4" type="Label" parent="Labels" unique_id=824548836]
 layout_mode = 0
-offset_left = 1083.0
-offset_top = 436.0
-offset_right = 1290.0
-offset_bottom = 481.0
+offset_left = 1044.0
+offset_top = 438.0
+offset_right = 1263.0
+offset_bottom = 483.0
 theme_override_colors/font_color = Color(0.9518779, 0.8569096, 0, 1)
 theme_override_fonts/font = ExtResource("13_8ekit")
 theme_override_font_sizes/font_size = 48
-text = "MODES"
+text = "FREEPLAY"
 
 [node name="MovingButtons" type="Control" parent="." unique_id=685970603]
 layout_mode = 3
