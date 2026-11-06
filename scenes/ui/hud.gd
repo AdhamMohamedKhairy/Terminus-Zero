@@ -25,7 +25,8 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("up"):
 		var burn := fuel_burn_rate
-		Globals.fuel = max(Globals.fuel - burn * delta, 0.0)
+		# Drain fuel faster,by multiplication of 3.5
+		Globals.fuel = max(Globals.fuel - burn*3.5 * delta, 0.0)
 
 func _process(delta: float) -> void:
 	if Globals.fuel <= 0:
