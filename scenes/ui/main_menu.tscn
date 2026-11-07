@@ -9,9 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bn32wwon2bojw" path="res://assets/clock.png" id="8_q85j6"]
 [ext_resource type="Script" uid="uid://vee82ad2mxpi" path="res://scenes/ui/texture_button_2.gd" id="9_7suek"]
 [ext_resource type="Script" uid="uid://kb3jsre6gutn" path="res://scenes/ui/texture_button.gd" id="9_q85j6"]
-[ext_resource type="Texture2D" uid="uid://blljewk0a8rcq" path="res://assets/cozy-space-backdrops/planets/4x/planet-gasblue.png" id="10_7suek"]
 [ext_resource type="FontFile" uid="uid://chf0a3hhnyw78" path="res://assets/fonts/pixel-space-free-personal-use/Pixel Space - Personal Use.ttf" id="10_8g5eo"]
-[ext_resource type="Script" uid="uid://8b0wnkfq38bn" path="res://scenes/ui/texture_button_3.gd" id="11_otr3d"]
 [ext_resource type="FontFile" uid="uid://cstm0pu8svo1l" path="res://assets/fonts/galacticgrid/GalacticGrid.ttf" id="13_8ekit"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6oxtn"]
@@ -806,17 +804,6 @@ theme_override_fonts/font = ExtResource("13_8ekit")
 theme_override_font_sizes/font_size = 48
 text = "SETTINGS"
 
-[node name="Label4" type="Label" parent="Labels" unique_id=824548836]
-layout_mode = 0
-offset_left = 1044.0
-offset_top = 438.0
-offset_right = 1263.0
-offset_bottom = 483.0
-theme_override_colors/font_color = Color(0.9518779, 0.8569096, 0, 1)
-theme_override_fonts/font = ExtResource("13_8ekit")
-theme_override_font_sizes/font_size = 48
-text = "FREEPLAY"
-
 [node name="MovingButtons" type="Control" parent="." unique_id=685970603]
 layout_mode = 3
 anchors_preset = 15
@@ -863,22 +850,13 @@ scale = Vector2(1.0000001, 1.0000001)
 sprite_frames = SubResource("SpriteFrames_onkbk")
 animation = &"hover"
 
-[node name="TextureButton3" type="TextureButton" parent="MovingButtons" unique_id=1607799845]
-layout_mode = 0
-offset_left = 1051.0
-offset_top = 416.0
-offset_right = 1379.0
-offset_bottom = 608.0
+[node name="BlueGasPlanet" type="AnimatedSprite2D" parent="." unique_id=1527010467]
+position = Vector2(1144.9998, 580.9999)
 rotation = 0.5235988
-texture_normal = ExtResource("10_7suek")
-script = ExtResource("11_otr3d")
-
-[node name="BlueGasPlanet" type="AnimatedSprite2D" parent="MovingButtons/TextureButton3" unique_id=1527010467]
-position = Vector2(163.90619, 95.89421)
 sprite_frames = SubResource("SpriteFrames_f8svg")
 animation = &"hover"
+autoplay = "hover"
 
 [connection signal="timeout" from="MeteorTimer" to="." method="_on_meteor_timer_timeout"]
 [connection signal="pressed" from="MovingButtons/TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="MovingButtons/TextureButton2" to="." method="_on_texture_button_2_pressed"]
-[connection signal="pressed" from="MovingButtons/TextureButton3" to="." method="_on_texture_button_3_pressed"]

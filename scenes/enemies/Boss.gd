@@ -8,7 +8,7 @@ extends CharacterBody2D
 @export var minion_count : int = 3
 @export var minion_spawn_interval : float = 3.0
 @export var SPEED := 1100
-@export var health : int = 100
+@export var health : int = 120
 @export var THRUST_POWER : float = 1000.0
 @export var MAX_SPEED : float = 450.0
 @export var DRAG : float = 0.9
