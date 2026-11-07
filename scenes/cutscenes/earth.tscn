@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bx4ivumr6u1ch" path="res://scenes/cutscenes/earth.gd" id="1_rtkvp"]
 [ext_resource type="Texture2D" uid="uid://bdk7oxg2trv52" path="res://assets/cozy-space-backdrops/planets/4x/planet-terran.png" id="2_o74di"]
 [ext_resource type="PackedScene" uid="uid://b5qmlnw8qgv7x" path="res://scenes/entities/player/player.tscn" id="4_atwdq"]
+[ext_resource type="AudioStream" uid="uid://drn2fkgywwrjl" path="res://assets/audio/space.mp3" id="5_atwdq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nfrx5"]
 radius = 310.00162
@@ -55,5 +56,9 @@ position = Vector2(0.99999994, 370.00003)
 scale = Vector2(1.75, 1.75)
 is_cutscene = true
 cutscene_path = NodePath("../Path2D")
+
+[node name="Space" type="AudioStreamPlayer" parent="." unique_id=1470868977]
+stream = ExtResource("5_atwdq")
+autoplay = true
 
 [connection signal="area_entered" from="earth" to="earth" method="_on_area_entered"]

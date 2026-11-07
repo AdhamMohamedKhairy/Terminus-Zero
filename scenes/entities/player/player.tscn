@@ -23,8 +23,11 @@
 [ext_resource type="Texture2D" uid="uid://wwx333biftr0" path="res://assets/spaceship/Shield Effect - Explosion.png" id="28_7nfft"]
 [ext_resource type="Texture2D" uid="uid://cua34x8faq8a2" path="res://assets/spaceship/Shield Effect - Spawn.png" id="29_brjyi"]
 [ext_resource type="Texture2D" uid="uid://dphfaaieopht8" path="res://assets/spaceship/warp/01.png" id="29_bxmn4"]
+[ext_resource type="AudioStream" uid="uid://b7fy7hyvk38tr" path="res://assets/audio/explode.wav" id="30_0xxfp"]
 [ext_resource type="Texture2D" uid="uid://d15yc57isd4q3" path="res://assets/spaceship/warp/02.png" id="30_f3lfh"]
+[ext_resource type="AudioStream" uid="uid://c6n06dcd1nnpd" path="res://assets/audio/warp.mp3" id="31_l2s38"]
 [ext_resource type="Texture2D" uid="uid://7jyfhr27bb52" path="res://assets/spaceship/warp/03.png" id="31_pomkq"]
+[ext_resource type="AudioStream" uid="uid://cflh73sfm3yms" path="res://assets/audio/laser.mp3" id="32_11qh6"]
 [ext_resource type="Texture2D" uid="uid://dvqqibxhnkodj" path="res://assets/spaceship/warp/04.png" id="32_hsn3e"]
 [ext_resource type="Texture2D" uid="uid://bxnggdytqe2bi" path="res://assets/spaceship/warp/05.png" id="33_txex0"]
 [ext_resource type="Texture2D" uid="uid://cs8a3r6qnov4n" path="res://assets/spaceship/warp/06.png" id="34_thyny"]
@@ -473,5 +476,16 @@ animation = &"explode"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="shield" unique_id=1772330036]
 shape = SubResource("CircleShape2D_0hvcy")
 disabled = true
+
+[node name="Explode" type="AudioStreamPlayer" parent="." unique_id=377682226]
+stream = ExtResource("30_0xxfp")
+
+[node name="Warp" type="AudioStreamPlayer" parent="." unique_id=1184150711]
+stream = ExtResource("31_l2s38")
+volume_db = -8.211
+
+[node name="Laser" type="AudioStreamPlayer" parent="." unique_id=820185869]
+stream = ExtResource("32_11qh6")
+volume_db = -14.596
 
 [connection signal="area_entered" from="area" to="." method="_on_area_area_entered"]

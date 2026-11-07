@@ -27,7 +27,6 @@ var last_tile = Vector2i(99999,99999)
 var station_spawns = false
 
 func _ready() -> void:
-	$DeathScreen.visible = false
 	noise.noise_type = FastNoiseLite.TYPE_PERLIN
 	noise.seed = randi()
 	noise.frequency = 0.03
@@ -74,10 +73,6 @@ func _physics_process(_delta: float) -> void:
 		load_chunk(world_size_start.x, world_size_start.y + 1)
 	elif player_position_negative.y < world_size_start.y:
 		load_chunk(world_size_start.x, world_size_start.y - 1)
-	if Player.dead:
-		get_tree().paused = true
-		$DeathScreen.visible = true
-		$CanvasLayer.visible = false
 		
 	var player := Player
 	#check_station(player)
@@ -96,9 +91,9 @@ func _physics_process(_delta: float) -> void:
 			
 
 func gened_cell(c: Vector2i, player: Node2D):
-	if randi_range(1, 35) == 1:
+	if randi_range(1, 25) == 1:
 		spawn(enemy_one_scene, c, player)
-	if randi_range(1, 120) == 1:
+	if randi_range(1, 50) == 1:
 		spawn(boss_scene, c, player)
 		
 func spawn(scene: PackedScene, c: Vector2i, player: Node2D):

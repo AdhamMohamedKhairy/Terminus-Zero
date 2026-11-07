@@ -62,13 +62,16 @@ func _ready():
 			Bubble.queue_text(["The Earth? Are you even human?","You were born a human, later turned into a space ship...","You no longer belong to here...","This wasn't your end point....","This is where it all started","Good luck, Spx!"])
 			await get_tree().create_timer(13).timeout
 			sprite.play("die")
+			$Explode.play()
 			await sprite.animation_finished
+			await $Explode.finished
 			await get_tree().create_timer(1.2).timeout
 			queue_free()
 			get_tree().change_scene_to_file("res://scenes/cutscenes/end_credits.tscn")
 		return 
 	# Spawn, then idle
 	sprite.play("warp")
+	$Warp.play()
 	await sprite.animation_finished
 	sprite.play("idle")
 	await get_tree().create_timer(1).timeout
@@ -106,6 +109,7 @@ func _physics_process(delta: float) -> void:
 	
 	# Shoot fireballs
 	if Input.is_action_just_pressed("shoot") and not bullet_on_cd:
+		$Laser.play()
 		shoot(forward_vector)
 	
 	
@@ -160,8 +164,9 @@ func take_damage(dmg:int):
 		collision.set_deferred("disabled",true)
 		dead = true
 		sprite.play("die")
+		$Explode.play()
 		await sprite.animation_finished
-		queue_free()
+		get_tree().change_scene_to_file("res://scenes/ui/death_screen.tscn")
 	elif health <= 50 and not health_50_warning:
 		Bubble.queue_text(["50 HP!"])
 		health_50_warning = true
