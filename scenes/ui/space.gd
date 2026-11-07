@@ -57,7 +57,7 @@ func _physics_process(_delta: float) -> void:
 	if not gas_spawned:
 		if Globals.won:
 			var copy = gas_scene.instantiate()
-			copy.global_position = Globals.player.global_position + Vector2(100,100)
+			copy.global_position = Globals.player.global_position + Vector2(400,400)
 			add_child(copy)
 			gas_spawned = true
 	camera.position = Player.position

@@ -15,7 +15,6 @@ func _on_body_entered(body:Node2D):
 		fade.modulate.a = 0
 		fade.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 		canvas.add_child(fade)
-		
 		get_parent().get_parent().add_child(canvas)
 		
 		var tween := get_tree().create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_LINEAR)
