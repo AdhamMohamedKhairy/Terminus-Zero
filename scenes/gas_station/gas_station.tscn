@@ -13,6 +13,7 @@ _data = {
 point_count = 10
 
 [node name="GasStation" type="StaticBody2D" unique_id=439218340]
+scale = Vector2(4, 4)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1963764423]
 texture = ExtResource("1_0k84q")

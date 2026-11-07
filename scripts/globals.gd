@@ -3,7 +3,7 @@ var has_shield = false
 var shield = 0
 var health := 200
 var velocity: float
-var score: int = 0
+var score: int = 28
 var player:CharacterBody2D = null
 var fuel: float = 1000.0:
 	set(value):
