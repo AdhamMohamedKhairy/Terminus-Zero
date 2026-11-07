@@ -155,13 +155,16 @@ region = Rect2(1.698, 43.173, 118.302, 24)
 atlas = ExtResource("4_uq4kr")
 region = Rect2(23.86945, 75.920456, 93.15732, 9.2730255)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_onkbk"]
+radius = 109.01835
+
 [node name="Boss" type="CharacterBody2D" unique_id=228694409]
 script = ExtResource("1_ian0n")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=76004852]
 sprite_frames = SubResource("SpriteFrames_nfrx5")
+animation = &"die"
 autoplay = "default"
-frame_progress = 0.18401422
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=104755463]
 shape = SubResource("CircleShape2D_0hvcy")
@@ -181,3 +184,10 @@ value = 1.0
 texture_under = SubResource("AtlasTexture_0hvcy")
 texture_progress = SubResource("AtlasTexture_nfrx5")
 texture_progress_offset = Vector2(24, 7)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=52817897]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=758356469]
+shape = SubResource("CircleShape2D_onkbk")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

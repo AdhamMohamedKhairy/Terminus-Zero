@@ -450,7 +450,7 @@ autoplay = "idle"
 [node name="collision" type="CollisionShape2D" parent="." unique_id=1015923296]
 shape = SubResource("CircleShape2D_ucweq")
 
-[node name="area" type="Area2D" parent="." unique_id=833239874]
+[node name="area" type="Area2D" parent="." unique_id=833239874 groups=["player"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="area" unique_id=1206745581]
 shape = SubResource("CircleShape2D_nfrx5")

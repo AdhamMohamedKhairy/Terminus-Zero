@@ -42,5 +42,6 @@ frame_progress = 0.83036083
 position = Vector2(1, 0)
 shape = SubResource("CircleShape2D_s7wsd")
 
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

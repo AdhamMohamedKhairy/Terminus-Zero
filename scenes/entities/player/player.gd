@@ -193,6 +193,7 @@ func _on_area_area_entered(area: Area2D) -> void:
 	elif area.is_in_group("bullet_buff"):
 		pass
 	elif area.is_in_group("speed_buff"):
-		pass
+		Globals.boosts += 1
+		area.queue_free()
 	if area.is_in_group("hostile"):
 		take_damage(area.dmg)
