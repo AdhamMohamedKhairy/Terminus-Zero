@@ -34,7 +34,7 @@ func _process(delta: float) -> void:
 		pause_held_time = 0.0
 	
 	if not won:
-		if score>=30:
+		if score>=40:
 			won=true
 
 func reset():

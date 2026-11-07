@@ -57,7 +57,7 @@ func die():
 	should_chase = false
 	animated_sprite_2d.play("die")
 	await animated_sprite_2d.animation_finished
-	Globals.score += 2
+	Globals.score += 6
 	queue_free()
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
