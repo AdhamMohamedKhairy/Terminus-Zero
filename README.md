@@ -1,6 +1,6 @@
 # Terminus Zero : An Ending? A Start?
 ## A Game by [Hazorox](https://github.com/hazorox/) - [Vii](https://github.com/vii-abdullatif) - [Aboel5yr](https://github.com/adhammohamedkhairy)
-### Live on [itch.io](https://hazoro.itch.io/terminus-zero)
+### Live on [itch.io](https://vbdullatif.itch.io/terminuszero)
 <center> <img src = "pics/icon.png" alt="Game Icon" /> </center>
 
 # Lore
